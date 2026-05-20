@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Služby | Kamila Kopřivová</title>
+
+<style>
+:root{
+--cream:#f5f1e8;
+--cream-dark:#ebe2d3;
+--gold:#b79b67;
+--olive:#66755a;
+--olive-dark:#4f5d45;
+--dark:#2a2925;
+--text:#4d4a45;
+--muted:#746f67;
+--border:#e6dccd;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+background:linear-gradient(180deg,var(--cream),#fffaf2);
+font-family:Arial,sans-serif;
+color:var(--text);
+line-height:1.7;
+}
+
+h1,h2,h3{
+font-family:Georgia,serif;
+font-weight:normal;
+}
+
+header{
+position:sticky;
+top:0;
+z-index:1000;
+background:linear-gradient(135deg,var(--olive),var(--olive-dark));
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:22px 8%;
+box-shadow:0 8px 30px rgba(79,93,69,0.25);
+}
+
+.logo{
+font-size:24px;
+font-family:Georgia,serif;
+font-weight:bold;
+color:white;
+text-decoration:none;
+}
+
+.logo span{
+color:#f3e6c9;
+}
+
+nav{
+display:flex;
+gap:28px;
+align-items:center;
+}
+
+nav a{
+text-decoration:none;
+color:white;
+font-size:15px;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#f3e6c9;
+}
+
+.hero{
+text-align:center;
+padding:120px 8% 95px;
+}
+
+.hero-label{
+text-transform:uppercase;
+letter-spacing:2px;
+font-size:13px;
+color:var(--olive);
+font-weight:bold;
+margin-bottom:18px;
+}
+
+.hero h1{
+font-size:60px;
+line-height:1.1;
+color:var(--dark);
+max-width:950px;
+margin:auto;
+margin-bottom:24px;
+}
+
+.hero p{
+max-width:760px;
+margin:auto;
+font-size:18px;
+color:var(--muted);
+}
+
+section{
+padding:90px 8%;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:28px;
+}
+
+.card{
+background:linear-gradient(180deg,#ffffff,#faf7f1);
+padding:38px;
+border-radius:32px;
+border:1px solid var(--border);
+box-shadow:0 18px 45px rgba(80,70,50,0.07);
+}
+
+.card h3{
+font-size:26px;
+color:var(--olive-dark);
+margin-bottom:14px;
+}
+
+.card p{
+color:var(--muted);
+margin-bottom:18px;
+}
+
+.card ul{
+padding-left:20px;
+color:var(--muted);
+}
+
+.card li{
+margin-bottom:8px;
+}
+
+.process{
+background:linear-gradient(135deg,#ffffff,var(--cream-dark));
+}
+
+.section-title{
+font-size:46px;
+text-align:center;
+color:var(--dark);
+margin-bottom:18px;
+}
+
+.section-subtitle{
+max-width:760px;
+margin:auto;
+margin-bottom:55px;
+text-align:center;
+color:var(--muted);
+font-size:18px;
+}
+
+.steps{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:24px;
+}
+
+.step{
+background:white;
+padding:34px;
+border-radius:30px;
+border:1px solid var(--border);
+box-shadow:0 18px 45px rgba(80,70,50,0.06);
+}
+
+.step span{
+display:inline-block;
+font-size:14px;
+font-weight:bold;
+color:white;
+background:linear-gradient(135deg,var(--olive),var(--olive-dark));
+padding:8px 14px;
+border-radius:20px;
+margin-bottom:18px;
+}
+
+.step h3{
+font-size:23px;
+color:var(--dark);
+margin-bottom:12px;
+}
+
+.step p{
+color:var(--muted);
+}
+
+.quote{
+background:linear-gradient(135deg,var(--olive),var(--olive-dark));
+color:white;
+text-align:center;
+padding:90px 8%;
+}
+
+.quote h2{
+font-size:40px;
+max-width:900px;
+margin:auto;
+line-height:1.4;
+}
+
+.cta{
+padding:90px 8%;
+text-align:center;
+}
+
+.cta-box{
+background:linear-gradient(180deg,#ffffff,#f7f2ea);
+max-width:780px;
+margin:auto;
+padding:58px;
+border-radius:36px;
+border:1px solid var(--border);
+box-shadow:0 18px 45px rgba(80,70,50,0.08);
+}
+
+.cta h2{
+font-size:42px;
+color:var(--dark);
+margin-bottom:18px;
+}
+
+.cta p{
+color:var(--muted);
+margin-bottom:30px;
+}
+
+.btn{
+display:inline-block;
+padding:15px 30px;
+border-radius:40px;
+text-decoration:none;
+font-weight:bold;
+transition:0.3s;
+}
+
+.btn-primary{
+background:linear-gradient(135deg,var(--olive),var(--olive-dark));
+color:white;
+box-shadow:0 10px 25px rgba(102,117,90,0.25);
+}
+
+.btn:hover{
+transform:translateY(-2px);
+}
+
+footer{
+background:var(--dark);
+color:white;
+text-align:center;
+padding:28px;
+font-size:14px;
+}
+
+@media(max-width:900px){
+header{
+flex-direction:column;
+gap:16px;
+}
+
+nav{
+flex-wrap:wrap;
+justify-content:center;
+gap:16px;
+}
+
+.hero h1{
+font-size:42px;
+}
+
+.grid,
+.steps{
+grid-template-columns:1fr;
+}
+
+.section-title{
+font-size:36px;
+}
+
+.quote h2{
+font-size:30px;
+}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<a href="index.html" class="logo">Kamila <span>Kopřivová</span></a>
+
+<nav>
+<a href="index.html">Domů</a>
+<a href="sluzby.html">Služby</a>
+<a href="index.html#nemovitosti">Nemovitosti</a>
+<a href="reference.html">Reference</a>
+<a href="index.html#kontakt">Kontakt</a>
+</nav>
+</header>
+
+<div class="hero">
+<div class="hero-label">Kompletní realitní servis</div>
+
+<h1>Služby, které vám pomohou prodat nebo pronajmout nemovitost s jistotou.</h1>
+
+<p>
+Od první konzultace přes přípravu nemovitosti až po bezpečné předání.
+Cílem je profesionální prezentace, klidný průběh a co nejlepší výsledek.
+</p>
+</div>
+
+<section>
+<div class="grid">
+
+<div class="card">
+<h3>Prodej nemovitosti</h3>
+<p>
+Postarám se o strategii, prezentaci, inzerci i komunikaci se zájemci.
+</p>
+<ul>
+<li>odhad a nastavení ceny</li>
+<li>příprava nemovitosti</li>
+<li>prezentace a inzerce</li>
+<li>komunikace se zájemci</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Pronájem nemovitosti</h3>
+<p>
+Pomohu najít vhodného nájemníka a připravit celý pronájem profesionálně.
+</p>
+<ul>
+<li>příprava inzerátu</li>
+<li>výběr nájemníka</li>
+<li>prohlídky</li>
+<li>bezpečný průběh pronájmu</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Marketing nemovitosti</h3>
+<p>
+Kvalitní prezentace často rozhoduje o tom, jak rychle a za kolik se nemovitost prodá.
+</p>
+<ul>
+<li>fotografie</li>
+<li>video prezentace</li>
+<li>sociální sítě</li>
+<li>textace inzerátu</li>
+</ul>
+</div>
+
+</div>
+</section>
+
+<section class="process">
+<h2 class="section-title">Jak spolupráce probíhá</h2>
+
+<p class="section-subtitle">
+Jednoduchý, srozumitelný a férový postup od prvního kontaktu až po výsledek.
+</p>
+
+<div class="steps">
+
+<div class="step">
+<span>01</span>
+<h3>Konzultace</h3>
+<p>Společně projdeme situaci, cíle a možnosti prodeje nebo pronájmu.</p>
+</div>
+
+<div class="step">
+<span>02</span>
+<h3>Příprava</h3>
+<p>Nemovitost připravíme tak, aby působila atraktivně a důvěryhodně.</p>
+</div>
+
+<div class="step">
+<span>03</span>
+<h3>Prezentace</h3>
+<p>Vytvoří se kvalitní inzerce, fotografie, video a komunikace směrem k zájemcům.</p>
+</div>
+
+<div class="step">
+<span>04</span>
+<h3>Výsledek</h3>
+<p>Provedu vás jednáním, domluvou i bezpečným dokončením celého obchodu.</p>
+</div>
+
+</div>
+</section>
+
+<section class="quote">
+<h2>
+„Dobře připravená nemovitost nepůsobí jen lépe. Často se také lépe prodává.“
+</h2>
+</section>
+
+<section class="cta">
+<div class="cta-box">
+<h2>Chcete vědět, jaký postup zvolit?</h2>
+
+<p>
+Ozvěte se a společně projdeme, co bude pro vaši nemovitost nejlepší.
+</p>
+
+<a href="index.html#kontakt" class="btn btn-primary">Domluvit konzultaci</a>
+</div>
+</section>
+
+<footer>
+© 2026 Kamila Kopřivová | Realitní makléřka
+</footer>
+
+</body>
+</html>
