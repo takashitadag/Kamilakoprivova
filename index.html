@@ -1,515 +1,605 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kamila Kopřivová | Realitní makléřka</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kamila Kopřivová | Realitní makléřka</title>
 
-  <style>
-    :root {
-      --cream: #f7f3ec;
-      --white: #ffffff;
-      --sand: #e8dccb;
-      --olive: #6f7b63;
-      --gold: #b9975b;
-      --dark: #2d2b27;
-      --text: #4a4640;
-      --muted: #7a746b;
-    }
+<style>
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+:root{
+--cream:#f8f5ef;
+--white:#ffffff;
+--gold:#b89b68;
+--olive:#6f7b63;
+--dark:#2c2a27;
+--text:#4d4943;
+--muted:#7d766d;
+--border:#ece4d7;
+}
 
-    body {
-      font-family: "Georgia", "Times New Roman", serif;
-      background: var(--cream);
-      color: var(--text);
-      line-height: 1.7;
-    }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
-    html {
-      scroll-behavior: smooth;
-    }
+html{
+scroll-behavior:smooth;
+}
 
-    header {
-      background: rgba(255,255,255,0.92);
-      backdrop-filter: blur(12px);
-      padding: 22px 8%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      border-bottom: 1px solid var(--sand);
-    }
+body{
+background:var(--cream);
+font-family:Arial,sans-serif;
+color:var(--text);
+line-height:1.7;
+}
 
-    .logo {
-      font-size: 22px;
-      color: var(--dark);
-      font-weight: bold;
-      letter-spacing: 0.5px;
-    }
+h1,h2,h3{
+font-family:Georgia,serif;
+font-weight:normal;
+}
 
-    .logo span {
-      color: var(--gold);
-    }
+header{
+position:sticky;
+top:0;
+z-index:1000;
+background:rgba(255,255,255,0.95);
+backdrop-filter:blur(12px);
+border-bottom:1px solid var(--border);
 
-    nav a {
-      text-decoration: none;
-      color: var(--dark);
-      margin-left: 28px;
-      font-size: 15px;
-      font-family: Arial, sans-serif;
-    }
+display:flex;
+justify-content:space-between;
+align-items:center;
 
-    .hero {
-      min-height: 88vh;
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      align-items: center;
-      gap: 60px;
-      padding: 90px 8%;
-    }
+padding:22px 8%;
+}
 
-    .hero-label {
-      color: var(--gold);
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 13px;
-      margin-bottom: 18px;
-      font-family: Arial, sans-serif;
-    }
+.logo{
+font-size:24px;
+font-family:Georgia,serif;
+font-weight:bold;
+color:var(--dark);
+text-decoration:none;
+}
 
-    .hero h1 {
-      font-size: 58px;
-      line-height: 1.1;
-      color: var(--dark);
-      margin-bottom: 26px;
-      max-width: 700px;
-    }
+.logo span{
+color:var(--gold);
+}
 
-    .hero p {
-      font-size: 19px;
-      color: var(--muted);
-      max-width: 620px;
-      margin-bottom: 34px;
-      font-family: Arial, sans-serif;
-    }
+nav{
+display:flex;
+align-items:center;
+gap:28px;
+}
 
-    .buttons {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
+nav a{
+text-decoration:none;
+color:var(--dark);
+font-size:15px;
+transition:0.3s;
+}
 
-    .btn {
-      display: inline-block;
-      padding: 14px 28px;
-      border-radius: 40px;
-      text-decoration: none;
-      font-family: Arial, sans-serif;
-      font-weight: bold;
-      transition: 0.3s;
-    }
+nav a:hover{
+color:var(--gold);
+}
 
-    .btn-primary {
-      background: var(--olive);
-      color: white;
-    }
+.hero{
+min-height:90vh;
 
-    .btn-secondary {
-      border: 1px solid var(--gold);
-      color: var(--dark);
-      background: transparent;
-    }
+display:grid;
+grid-template-columns:1.1fr 0.9fr;
+gap:70px;
+align-items:center;
 
-    .hero-image {
-      background: var(--white);
-      padding: 18px;
-      border-radius: 32px;
-      box-shadow: 0 25px 70px rgba(80, 70, 50, 0.14);
-    }
+padding:90px 8%;
+}
 
-    .hero-image img {
-      width: 100%;
-      height: 520px;
-      object-fit: cover;
-      border-radius: 24px;
-    }
+.hero-label{
+text-transform:uppercase;
+letter-spacing:2px;
+font-size:13px;
+color:var(--gold);
+margin-bottom:20px;
+}
 
-    section {
-      padding: 85px 8%;
-    }
+.hero h1{
+font-size:62px;
+line-height:1.08;
+color:var(--dark);
+margin-bottom:28px;
+max-width:700px;
+}
 
-    .section-title {
-      font-size: 42px;
-      color: var(--dark);
-      margin-bottom: 18px;
-      text-align: center;
-    }
+.hero p{
+font-size:18px;
+color:var(--muted);
+max-width:620px;
+margin-bottom:36px;
+}
 
-    .section-subtitle {
-      max-width: 780px;
-      margin: 0 auto 50px;
-      text-align: center;
-      color: var(--muted);
-      font-family: Arial, sans-serif;
-      font-size: 18px;
-    }
+.buttons{
+display:flex;
+gap:16px;
+flex-wrap:wrap;
+}
 
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-top: -50px;
-      padding: 0 8% 70px;
-    }
+.btn{
+display:inline-block;
+padding:15px 30px;
+border-radius:40px;
+text-decoration:none;
+font-weight:bold;
+transition:0.3s;
+}
 
-    .stat {
-      background: var(--white);
-      padding: 34px;
-      border-radius: 24px;
-      text-align: center;
-      box-shadow: 0 18px 45px rgba(80,70,50,0.09);
-    }
+.btn-primary{
+background:var(--olive);
+color:white;
+}
 
-    .stat h3 {
-      font-size: 42px;
-      color: var(--gold);
-      margin-bottom: 8px;
-    }
+.btn-primary:hover{
+transform:translateY(-2px);
+}
 
-    .stat p {
-      font-family: Arial, sans-serif;
-      color: var(--muted);
-    }
+.btn-secondary{
+border:1px solid var(--gold);
+color:var(--dark);
+background:transparent;
+}
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
-    }
+.hero-image{
+background:white;
+padding:18px;
+border-radius:30px;
+box-shadow:0 25px 70px rgba(0,0,0,0.08);
+}
 
-    .card {
-      background: var(--white);
-      padding: 34px;
-      border-radius: 26px;
-      box-shadow: 0 18px 45px rgba(80,70,50,0.08);
-      border: 1px solid #eee5d8;
-    }
+.hero-image img{
+width:100%;
+height:540px;
+object-fit:cover;
+border-radius:22px;
+}
 
-    .card h3 {
-      color: var(--dark);
-      font-size: 23px;
-      margin-bottom: 14px;
-    }
+.stats{
+padding:0 8% 90px;
 
-    .card p {
-      font-family: Arial, sans-serif;
-      color: var(--muted);
-    }
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:24px;
+}
 
-    .about {
-      background: var(--white);
-    }
+.stat{
+background:white;
+padding:38px;
+border-radius:28px;
+text-align:center;
+box-shadow:0 18px 45px rgba(0,0,0,0.05);
+}
 
-    .about-box {
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 55px;
-      align-items: center;
-      max-width: 1150px;
-      margin: auto;
-    }
+.stat h2{
+font-size:46px;
+color:var(--gold);
+margin-bottom:8px;
+}
 
-    .about-box img {
-      width: 100%;
-      border-radius: 30px;
-      box-shadow: 0 25px 60px rgba(0,0,0,0.1);
-    }
+.stat p{
+color:var(--muted);
+}
 
-    .about-text h2 {
-      font-size: 42px;
-      color: var(--dark);
-      margin-bottom: 22px;
-    }
+section{
+padding:90px 8%;
+}
 
-    .about-text p {
-      font-family: Arial, sans-serif;
-      color: var(--muted);
-      margin-bottom: 18px;
-      font-size: 17px;
-    }
+.section-title{
+font-size:46px;
+text-align:center;
+margin-bottom:18px;
+color:var(--dark);
+}
 
-    .property {
-      background: var(--sand);
-    }
+.section-subtitle{
+max-width:760px;
+margin:auto;
+margin-bottom:55px;
+text-align:center;
+color:var(--muted);
+font-size:18px;
+}
 
-    .property-card {
-      background: var(--white);
-      max-width: 1100px;
-      margin: auto;
-      border-radius: 30px;
-      overflow: hidden;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      box-shadow: 0 25px 65px rgba(80,70,50,0.12);
-    }
+.grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:28px;
+}
 
-    .property-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+.card{
+background:white;
+padding:36px;
+border-radius:28px;
+border:1px solid var(--border);
+box-shadow:0 18px 45px rgba(0,0,0,0.04);
+}
 
-    .property-info {
-      padding: 45px;
-    }
+.card h3{
+font-size:24px;
+margin-bottom:14px;
+color:var(--dark);
+}
 
-    .property-info h3 {
-      font-size: 32px;
-      color: var(--dark);
-      margin-bottom: 18px;
-    }
+.card p{
+color:var(--muted);
+}
 
-    .property-info p {
-      font-family: Arial, sans-serif;
-      color: var(--muted);
-      margin-bottom: 24px;
-    }
+.about{
+background:white;
+}
 
-    .quote {
-      background: var(--olive);
-      color: white;
-      text-align: center;
-    }
+.about-box{
+max-width:1150px;
+margin:auto;
 
-    .quote h2 {
-      max-width: 900px;
-      margin: auto;
-      font-size: 38px;
-      line-height: 1.35;
-      font-weight: normal;
-    }
+display:grid;
+grid-template-columns:0.9fr 1.1fr;
+gap:60px;
+align-items:center;
+}
 
-    .contact {
-      text-align: center;
-      background: var(--cream);
-    }
+.about-box img{
+width:100%;
+border-radius:28px;
+}
 
-    .contact-box {
-      background: var(--white);
-      max-width: 760px;
-      margin: auto;
-      padding: 50px;
-      border-radius: 30px;
-      box-shadow: 0 25px 70px rgba(80,70,50,0.1);
-    }
+.about-text h2{
+font-size:44px;
+margin-bottom:22px;
+}
 
-    .contact h2 {
-      font-size: 40px;
-      color: var(--dark);
-      margin-bottom: 16px;
-    }
+.about-text p{
+margin-bottom:18px;
+color:var(--muted);
+}
 
-    .contact p {
-      font-family: Arial, sans-serif;
-      color: var(--muted);
-      margin-bottom: 8px;
-      font-size: 17px;
-    }
+.property-card{
+background:white;
+max-width:1100px;
+margin:auto;
 
-    footer {
-      background: var(--dark);
-      color: white;
-      text-align: center;
-      padding: 28px;
-      font-family: Arial, sans-serif;
-      font-size: 14px;
-    }
+display:grid;
+grid-template-columns:1fr 1fr;
 
-    @media (max-width: 900px) {
-      header {
-        flex-direction: column;
-        gap: 14px;
-      }
+border-radius:32px;
+overflow:hidden;
 
-      nav a {
-        margin: 0 8px;
-      }
+box-shadow:0 20px 60px rgba(0,0,0,0.06);
+}
 
-      .hero,
-      .about-box,
-      .property-card,
-      .grid,
-      .stats {
-        grid-template-columns: 1fr;
-      }
+.property-card img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
 
-      .hero h1 {
-        font-size: 40px;
-      }
+.property-info{
+padding:48px;
+}
 
-      .hero-image img {
-        height: 360px;
-      }
-    }
-  </style>
+.property-info h3{
+font-size:34px;
+margin-bottom:18px;
+}
+
+.property-info p{
+margin-bottom:28px;
+color:var(--muted);
+}
+
+.quote{
+background:var(--olive);
+color:white;
+text-align:center;
+padding:90px 8%;
+}
+
+.quote h2{
+font-size:40px;
+max-width:900px;
+margin:auto;
+line-height:1.4;
+}
+
+.contact{
+text-align:center;
+}
+
+.contact-box{
+background:white;
+max-width:760px;
+margin:auto;
+
+padding:55px;
+border-radius:32px;
+
+box-shadow:0 20px 60px rgba(0,0,0,0.05);
+}
+
+.contact h2{
+font-size:42px;
+margin-bottom:16px;
+}
+
+.contact p{
+color:var(--muted);
+margin-bottom:8px;
+}
+
+footer{
+background:var(--dark);
+color:white;
+text-align:center;
+padding:28px;
+font-size:14px;
+margin-top:90px;
+}
+
+@media(max-width:900px){
+
+header{
+flex-direction:column;
+gap:16px;
+}
+
+nav{
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.hero,
+.about-box,
+.property-card,
+.grid,
+.stats{
+grid-template-columns:1fr;
+}
+
+.hero h1{
+font-size:42px;
+}
+
+.hero-image img{
+height:360px;
+}
+
+.section-title{
+font-size:36px;
+}
+
+.quote h2{
+font-size:30px;
+}
+
+}
+
+</style>
 </head>
 
 <body>
 
-  <header>
-    <a href="index.html" class="logo">
-  Kamila <span>Kopřivová</span>
+<header>
+
+<a href="index.html" class="logo">
+Kamila <span>Kopřivová</span>
 </a>
-    <nav>
-      <a href="#omne">O mně</a>
-      <a href="#sluzby">Služby</a>
-      <a href="#nemovitosti">Nemovitosti</a>
-      <a href="reference.html">Reference</a>
-      <a href="#kontakt">Kontakt</a>
+
+<nav>
+<a href="#omne">O mně</a>
+<a href="#sluzby">Služby</a>
+<a href="#nemovitosti">Nemovitosti</a>
+<a href="reference.html">Reference</a>
+<a href="#kontakt">Kontakt</a>
 </nav>
-    </nav>
-  </header>
 
-  <section class="hero">
-    <div>
-      <div class="hero-label">Realitní makléřka pro Olomoucký kraj</div>
-      <h1>Prodej nemovitosti s elegancí, klidem a jasným výsledkem.</h1>
-      <p>
-        Pomáhám klientům prodat nebo pronajmout nemovitost férově, profesionálně
-        a s důrazem na kvalitní prezentaci, první dojem a důvěru.
-      </p>
+</header>
 
-      <div class="buttons">
-       <a href="#kontakt" class="btn btn-primary">Domluvit konzultaci</a>
-        <a href="reference.html" class="btn btn-secondary">Zobrazit reference</a>
-      </div>
-    </div>
+<section class="hero">
 
-    <div class="hero-image">
-      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80" alt="Elegantní nemovitost">
-    </div>
-  </section>
+<div>
 
-  <div class="stats">
-    <div class="stat">
-      <h3>12+</h3>
-      <p>let zkušeností v realitách</p>
-    </div>
+<div class="hero-label">
+Realitní makléřka pro Olomoucký kraj
+</div>
 
-    <div class="stat">
-      <h3>300+</h3>
-      <p>zobchodovaných nemovitostí</p>
-    </div>
+<h1>
+Prodej nemovitosti s důvěrou, elegancí a výsledkem.
+</h1>
 
-    <div class="stat">
-      <h3>1.</h3>
-      <p>dojem rozhoduje o úspěchu</p>
-    </div>
-  </div>
+<p>
+Pomáhám klientům prodávat a pronajímat nemovitosti profesionálně,
+moderně a s důrazem na první dojem, kvalitní prezentaci a férový přístup.
+</p>
 
-  <section id="omne" class="about">
-    <div class="about-box">
-      <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=900&q=80" alt="Realitní práce">
+<div class="buttons">
+<a href="#kontakt" class="btn btn-primary">
+Domluvit konzultaci
+</a>
 
-      <div class="about-text">
-        <h2>Zakládám si na důvěře, poctivosti a osobním přístupu.</h2>
-        <p>
-          U každé nemovitosti hledám její silné stránky, které dokážou zaujmout správné kupující
-          nebo nájemce. Vím, že lidé nakupují očima, a proto kladu velký důraz na přípravu,
-          prezentaci a celkový dojem.
-        </p>
-        <p>
-          Nepotřebuji kolem toho dlouho mluvit. Vím, co dělám, a za svou prací si stojím.
-          Mým cílem je, aby se klient během celého procesu cítil jistě, informovaně a v dobrých rukou.
-        </p>
-      </div>
-    </div>
-  </section>
+<a href="reference.html" class="btn btn-secondary">
+Zobrazit reference
+</a>
+</div>
 
-  <section id="sluzby">
-    <h2 class="section-title">S čím vám pomohu</h2>
-    <p class="section-subtitle">
-      Kompletní realitní servis od prvního setkání až po úspěšné předání nemovitosti.
-    </p>
+</div>
 
-    <div class="grid">
-      <div class="card">
-        <h3>Prodej nemovitosti</h3>
-        <p>
-          Nastavení strategie, příprava nemovitosti, inzerce, komunikace se zájemci
-          a bezpečný průběh celého obchodu.
-        </p>
-      </div>
+<div class="hero-image">
+<img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80">
+</div>
 
-      <div class="card">
-        <h3>Pronájem nemovitosti</h3>
-        <p>
-          Pomohu najít vhodného nájemníka, připravit prezentaci a zajistit hladký průběh pronájmu.
-        </p>
-      </div>
+</section>
 
-      <div class="card">
-        <h3>Moderní prezentace</h3>
-        <p>
-          Kvalitní fotografie, video, sociální sítě, textace a vizuální styl,
-          který nemovitost odliší od konkurence.
-        </p>
-      </div>
-    </div>
-  </section>
+<div class="stats">
 
-  <section id="nemovitosti" class="property">
-    <h2 class="section-title">Aktuální nabídka</h2>
-    <p class="section-subtitle">
-      Každá nemovitost si zaslouží prezentaci, která zvýrazní její skutečnou hodnotu.
-    </p>
+<div class="stat">
+<h2>12+</h2>
+<p>let zkušeností</p>
+</div>
 
-    <div class="property-card">
-      <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=80" alt="Byt">
+<div class="stat">
+<h2>300+</h2>
+<p>zobchodovaných nemovitostí</p>
+</div>
 
-      <div class="property-info">
-        <h3>Stylový byt 3+1 s lodžií, garáží a zahrádkou</h3>
-        <p>
-          Ukázková karta nemovitosti. Zde může být krátký popis, lokalita,
-          hlavní výhody, cena a odkaz na celý inzerát.
-        </p>
-        <a href="#" class="btn btn-primary">Zobrazit detail</a>
-      </div>
-    </div>
-  </section>
+<div class="stat">
+<h2>100%</h2>
+<p>důraz na prezentaci a důvěru</p>
+</div>
 
-  <section class="quote">
-    <h2>
-      „Na přípravu nemovitosti kladu velký důraz. První dojem je nejdůležitější
-      a lidé nakupují očima.“
-    </h2>
-  </section>
+</div>
 
-  <section id="kontakt" class="contact">
-    <div class="contact-box">
-      <h2>Uvažujete o prodeji nebo pronájmu?</h2>
-      <p>Ráda s vámi projdu možnosti a navrhnu nejlepší postup.</p>
-      <br>
-      <p><strong>Ing. Kamila Kopřivová</strong></p>
-      <p>Vaše realitní makléřka</p>
-      <p>Olomoucký kraj</p>
-      <p>📧 koprivovakamila@gmail.com</p>
-      <p>📞 +420 736 167 321</p>
-      <br>
-      <a href="mailto:koprivovakamila@gmail.com" class="btn btn-primary">Napsat e-mail</a>
-    </div>
-  </section>
+<section id="omne" class="about">
 
-  <footer>
-    © 2026 Kamila Kopřivová | Realitní makléřka
-  </footer>
+<div class="about-box">
+
+<img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=80">
+
+<div class="about-text">
+
+<h2>
+Zakládám si na osobním přístupu a kvalitní prezentaci.
+</h2>
+
+<p>
+Každá nemovitost má své silné stránky. Mým cílem je je správně ukázat,
+aby si zájemci dokázali představit svůj budoucí domov už při prvním dojmu.
+</p>
+
+<p>
+Věřím v férovost, otevřenou komunikaci a profesionální vedení celého procesu.
+Za svou prací si stojím a klientům se snažím přinést klid i jistotu.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="sluzby">
+
+<h2 class="section-title">
+S čím vám pomohu
+</h2>
+
+<p class="section-subtitle">
+Kompletní servis od první konzultace až po úspěšné předání nemovitosti.
+</p>
+
+<div class="grid">
+
+<div class="card">
+<h3>Prodej nemovitosti</h3>
+<p>
+Strategie prodeje, prezentace, inzerce, komunikace se zájemci
+a bezpečný průběh obchodu.
+</p>
+</div>
+
+<div class="card">
+<h3>Pronájem nemovitosti</h3>
+<p>
+Pomohu vám najít vhodného nájemníka a připravit nemovitost tak,
+aby působila profesionálně a atraktivně.
+</p>
+</div>
+
+<div class="card">
+<h3>Moderní marketing</h3>
+<p>
+Fotografie, video, sociální sítě a vizuální styl,
+který odliší vaši nemovitost od konkurence.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="nemovitosti">
+
+<h2 class="section-title">
+Aktuální nabídka
+</h2>
+
+<p class="section-subtitle">
+Každá nemovitost si zaslouží profesionální prezentaci.
+</p>
+
+<div class="property-card">
+
+<img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80">
+
+<div class="property-info">
+
+<h3>
+Stylový byt 3+1 s lodžií, garáží a zahrádkou
+</h3>
+
+<p>
+Ukázková karta nemovitosti. Zde může být lokalita,
+stručný popis, cena a odkaz na celý inzerát.
+</p>
+
+<a href="#" class="btn btn-primary">
+Zobrazit detail
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="quote">
+
+<h2>
+„První dojem je nejdůležitější.
+Lidé nakupují očima.“
+</h2>
+
+</section>
+
+<section id="kontakt" class="contact">
+
+<div class="contact-box">
+
+<h2>
+Uvažujete o prodeji nebo pronájmu?
+</h2>
+
+<p>
+Ráda s vámi projdu možnosti a navrhnu nejlepší postup.
+</p>
+
+<br>
+
+<p><strong>Ing. Kamila Kopřivová</strong></p>
+<p>Olomoucký kraj</p>
+<p>📧 koprivovakamila@gmail.com</p>
+<p>📞 +420 736 167 321</p>
+
+<br>
+
+<a href="mailto:koprivovakamila@gmail.com" class="btn btn-primary">
+Napsat e-mail
+</a>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 Kamila Kopřivová | Realitní makléřka
+</footer>
 
 </body>
 </html>
