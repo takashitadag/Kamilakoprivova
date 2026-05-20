@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reference | Kamila Kopřivová</title>
+
+  <style>
+    :root {
+      --cream: #f7f3ec;
+      --white: #ffffff;
+      --sand: #e8dccb;
+      --olive: #6f7b63;
+      --gold: #b9975b;
+      --dark: #2d2b27;
+      --text: #4a4640;
+      --muted: #7a746b;
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      background:var(--cream);
+      color:var(--text);
+      font-family:Arial,sans-serif;
+      line-height:1.7;
+    }
+
+    header{
+      background:rgba(255,255,255,0.95);
+      backdrop-filter:blur(10px);
+      padding:22px 8%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      border-bottom:1px solid var(--sand);
+      position:sticky;
+      top:0;
+      z-index:100;
+    }
+
+    .logo{
+      font-size:22px;
+      font-weight:bold;
+      color:var(--dark);
+      font-family:Georgia, serif;
+    }
+
+    .logo span{
+      color:var(--gold);
+    }
+
+    nav a{
+      text-decoration:none;
+      color:var(--dark);
+      margin-left:28px;
+      font-size:15px;
+    }
+
+    .hero{
+      text-align:center;
+      padding:110px 8% 90px;
+    }
+
+    .hero span{
+      color:var(--gold);
+      text-transform:uppercase;
+      letter-spacing:2px;
+      font-size:13px;
+    }
+
+    .hero h1{
+      font-family:Georgia, serif;
+      font-size:58px;
+      color:var(--dark);
+      margin:20px auto;
+      max-width:850px;
+      line-height:1.15;
+    }
+
+    .hero p{
+      max-width:760px;
+      margin:auto;
+      color:var(--muted);
+      font-size:18px;
+    }
+
+    section{
+      padding:0 8% 90px;
+    }
+
+    .reviews{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:28px;
+    }
+
+    .review{
+      background:var(--white);
+      padding:34px;
+      border-radius:28px;
+      box-shadow:0 18px 45px rgba(0,0,0,0.06);
+      border:1px solid #eee5d8;
+    }
+
+    .review h3{
+      color:var(--dark);
+      margin-bottom:10px;
+      font-size:22px;
+      font-family:Georgia, serif;
+    }
+
+    .review small{
+      color:var(--gold);
+      display:block;
+      margin-bottom:18px;
+    }
+
+    .review p{
+      color:var(--muted);
+      font-size:15px;
+    }
+
+    .stats{
+      margin-top:60px;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:24px;
+    }
+
+    .stat{
+      background:var(--white);
+      padding:40px;
+      border-radius:28px;
+      text-align:center;
+      box-shadow:0 18px 45px rgba(0,0,0,0.05);
+    }
+
+    .stat h2{
+      font-size:48px;
+      color:var(--gold);
+      margin-bottom:10px;
+      font-family:Georgia, serif;
+    }
+
+    .stat p{
+      color:var(--muted);
+    }
+
+    .cta{
+      margin-top:90px;
+      background:var(--olive);
+      padding:70px;
+      border-radius:34px;
+      text-align:center;
+      color:white;
+    }
+
+    .cta h2{
+      font-size:42px;
+      margin-bottom:18px;
+      font-family:Georgia, serif;
+      font-weight:normal;
+    }
+
+    .cta p{
+      max-width:700px;
+      margin:auto;
+      margin-bottom:30px;
+      opacity:0.92;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:15px 30px;
+      background:white;
+      color:var(--dark);
+      border-radius:40px;
+      text-decoration:none;
+      font-weight:bold;
+    }
+
+    footer{
+      background:var(--dark);
+      color:white;
+      text-align:center;
+      padding:28px;
+      margin-top:90px;
+      font-size:14px;
+    }
+
+    @media(max-width:900px){
+
+      .hero h1{
+        font-size:40px;
+      }
+
+      .reviews,
+      .stats{
+        grid-template-columns:1fr;
+      }
+
+      header{
+        flex-direction:column;
+        gap:15px;
+      }
+
+      nav a{
+        margin:0 8px;
+      }
+
+      .cta{
+        padding:50px 30px;
+      }
+
+      .cta h2{
+        font-size:32px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">Kamila <span>Kopřivová</span></div>
+
+  <nav>
+    <a href="index.html">Domů</a>
+    <a href="nemovitosti.html">Nemovitosti</a>
+    <a href="sluzby.html">Služby</a>
+    <a href="kontakt.html">Kontakt</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <span>Důvěra klientů je základ</span>
+  <h1>Každá úspěšná spolupráce stojí na komunikaci, důvěře a správném přístupu.</h1>
+
+  <p>
+    Zakládám si na osobním přístupu, kvalitní prezentaci a profesionálním vedení celého procesu.
+    Největší odměnou jsou pro mě spokojení klienti, kteří se vracejí nebo mě doporučují dál.
+  </p>
+</div>
+
+<section>
+
+  <div class="reviews">
+
+    <div class="review">
+      <h3>Prodej rodinného domu</h3>
+      <small>Olomouc</small>
+
+      <p>
+        „Profesionální přístup od začátku do konce. Nemovitost byla krásně připravená,
+        komunikace rychlá a vše proběhlo bez stresu.“
+      </p>
+    </div>
+
+    <div class="review">
+      <h3>Pronájem bytu</h3>
+      <small>Šternberk</small>
+
+      <p>
+        „Oceňujeme lidský přístup, ochotu a moderní prezentaci bytu.
+        Paní Kopřivová vše vyřešila rychle a velmi profesionálně.“
+      </p>
+    </div>
+
+    <div class="review">
+      <h3>Prodej pozemku</h3>
+      <small>Bohuňovice</small>
+
+      <p>
+        „Perfektní komunikace, pravidelné informace a velmi příjemné jednání.
+        Byli jsme maximálně spokojeni.“
+      </p>
+    </div>
+
+  </div>
+
+  <div class="stats">
+
+    <div class="stat">
+      <h2>12+</h2>
+      <p>let zkušeností</p>
+    </div>
+
+    <div class="stat">
+      <h2>300+</h2>
+      <p>zobchodovaných nemovitostí</p>
+    </div>
+
+    <div class="stat">
+      <h2>100%</h2>
+      <p>důraz na důvěru a prezentaci</p>
+    </div>
+
+  </div>
+
+  <div class="cta">
+    <h2>Chcete prodat nebo pronajmout nemovitost?</h2>
+
+    <p>
+      Ráda vám pomohu najít nejlepší cestu a připravit prezentaci,
+      která zaujme správné zájemce.
+    </p>
+
+    <a href="kontakt.html" class="btn">Kontaktovat</a>
+  </div>
+
+</section>
+
+<footer>
+  © 2026 Kamila Kopřivová | Realitní makléřka
+</footer>
+
+</body>
+</html>
