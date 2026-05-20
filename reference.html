@@ -6,26 +6,43 @@
 <title>Reference | Kamila Kopřivová</title>
 
 <style>
+
 :root{
 --cream:#f5f1e8;
 --cream-dark:#ebe2d3;
+
 --white:#ffffff;
+
 --gold:#b79b67;
 --gold-light:#ceb58a;
+
 --olive:#66755a;
 --olive-dark:#4f5d45;
 --olive-light:#8b9a7f;
+
 --sand:#ddd0bc;
+
 --dark:#2a2925;
 --text:#4d4a45;
 --muted:#746f67;
+
 --border:#e6dccd;
 }
 
-*{margin:0;padding:0;box-sizing:border-box;}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
 body{
-background:linear-gradient(180deg,var(--cream),#fffaf2);
+background:
+linear-gradient(
+180deg,
+var(--cream),
+#fffaf2
+);
+
 font-family:Arial,sans-serif;
 color:var(--text);
 line-height:1.7;
@@ -36,28 +53,65 @@ font-family:Georgia,serif;
 font-weight:normal;
 }
 
+/* HEADER */
+
 header{
 position:sticky;
 top:0;
 z-index:1000;
-background:rgba(245,241,232,0.94);
+
+background:
+rgba(245,241,232,0.94);
+
 backdrop-filter:blur(14px);
+
 display:flex;
 justify-content:space-between;
 align-items:center;
+
 padding:22px 8%;
+
 border-bottom:1px solid var(--border);
 }
+
+/* LOGO */
 
 .logo{
 font-size:24px;
 font-family:Georgia,serif;
 font-weight:bold;
-color:var(--dark);
+
+color:white;
 text-decoration:none;
+
+padding:10px 18px;
+border-radius:16px;
+
+background:
+linear-gradient(
+135deg,
+var(--olive),
+var(--olive-dark)
+);
+
+box-shadow:
+0 10px 25px rgba(79,93,69,0.28);
+
+transition:0.3s;
 }
 
-.logo span{color:var(--gold);}
+.logo:hover{
+transform:translateY(-2px);
+
+box-shadow:
+0 14px 30px rgba(79,93,69,0.35);
+}
+
+.logo span{
+color:#f3e6c9;
+}
+
+/* NAV */
 
 nav{
 display:flex;
@@ -72,14 +126,25 @@ font-size:15px;
 transition:0.3s;
 }
 
-nav a:hover{color:var(--olive);}
+nav a:hover{
+color:var(--olive);
+}
+
+/* HERO */
 
 .hero{
 text-align:center;
-padding:115px 8% 95px;
+
+padding:120px 8% 100px;
+
 background:
-linear-gradient(rgba(245,241,232,0.88),rgba(245,241,232,0.96)),
-url("https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1400&q=80");
+linear-gradient(
+rgba(245,241,232,0.88),
+rgba(245,241,232,0.96)
+),
+
+url("https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1600&q=80");
+
 background-size:cover;
 background-position:center;
 }
@@ -89,174 +154,307 @@ text-transform:uppercase;
 letter-spacing:2px;
 font-size:13px;
 color:var(--olive);
+
 margin-bottom:18px;
+
 font-weight:bold;
 }
 
 .hero h1{
 font-size:60px;
 line-height:1.1;
+
 color:var(--dark);
+
 max-width:950px;
+
 margin:auto;
 margin-bottom:24px;
 }
 
 .hero p{
 max-width:760px;
+
 margin:auto;
+
 font-size:18px;
+
 color:var(--muted);
 }
 
-section{padding:90px 8%;}
+/* GENERAL */
+
+section{
+padding:90px 8%;
+}
+
+/* REVIEWS */
 
 .reviews{
 display:grid;
 grid-template-columns:repeat(3,1fr);
+
 gap:28px;
 }
 
 .review{
-background:linear-gradient(180deg,#ffffff,#faf7f1);
+background:
+linear-gradient(
+180deg,
+#ffffff,
+#faf7f1
+);
+
 padding:38px;
+
 border-radius:32px;
+
 border:1px solid var(--border);
-box-shadow:0 18px 45px rgba(80,70,50,0.07);
+
+box-shadow:
+0 18px 45px rgba(80,70,50,0.07);
 }
 
 .review h3{
 font-size:25px;
+
 margin-bottom:10px;
+
 color:var(--olive-dark);
 }
 
 .review small{
 display:block;
+
 margin-bottom:20px;
+
 color:var(--gold);
+
 font-size:14px;
+
 font-weight:bold;
 }
 
-.review p{color:var(--muted);}
+.review p{
+color:var(--muted);
+}
+
+/* STATS */
 
 .stats{
 margin-top:70px;
+
 display:grid;
 grid-template-columns:repeat(3,1fr);
+
 gap:24px;
 }
 
 .stat{
-background:linear-gradient(180deg,#ffffff,#f7f2ea);
+background:
+linear-gradient(
+180deg,
+#ffffff,
+#f7f2ea
+);
+
 padding:42px;
+
 border-radius:32px;
+
 text-align:center;
+
 border:1px solid var(--border);
-box-shadow:0 18px 45px rgba(80,70,50,0.07);
+
+box-shadow:
+0 18px 45px rgba(80,70,50,0.07);
 }
 
 .stat h2{
 font-size:50px;
+
 color:var(--olive);
+
 margin-bottom:10px;
 }
 
-.stat p{color:var(--muted);}
+.stat p{
+color:var(--muted);
+}
+
+/* QUOTE */
 
 .quote{
 margin-top:80px;
-background:linear-gradient(135deg,var(--olive),var(--olive-dark));
+
+background:
+linear-gradient(
+135deg,
+var(--olive),
+var(--olive-dark)
+);
+
 color:white;
+
 padding:90px 8%;
+
 border-radius:42px;
+
 text-align:center;
-box-shadow:0 20px 55px rgba(80,70,50,0.14);
+
+box-shadow:
+0 20px 55px rgba(80,70,50,0.14);
 }
 
 .quote h2{
 font-size:42px;
+
 line-height:1.4;
+
 max-width:900px;
+
 margin:auto;
 }
 
+/* CTA */
+
 .cta{
 margin-top:80px;
-background:linear-gradient(180deg,#ffffff,#f7f2ea);
+
+background:
+linear-gradient(
+180deg,
+#ffffff,
+#f7f2ea
+);
+
 padding:60px;
+
 border-radius:36px;
+
 text-align:center;
+
 border:1px solid var(--border);
-box-shadow:0 18px 45px rgba(80,70,50,0.07);
+
+box-shadow:
+0 18px 45px rgba(80,70,50,0.07);
 }
 
 .cta h2{
 font-size:42px;
+
 margin-bottom:18px;
+
 color:var(--dark);
 }
 
 .cta p{
 max-width:700px;
+
 margin:auto;
 margin-bottom:30px;
+
 color:var(--muted);
 }
 
+/* BUTTON */
+
 .btn{
 display:inline-block;
+
 padding:15px 30px;
+
 border-radius:40px;
+
 text-decoration:none;
+
 font-weight:bold;
+
 transition:0.3s;
 }
 
 .btn-primary{
-background:linear-gradient(135deg,var(--olive),var(--olive-dark));
+background:
+linear-gradient(
+135deg,
+var(--olive),
+var(--olive-dark)
+);
+
 color:white;
-box-shadow:0 10px 25px rgba(102,117,90,0.25);
+
+box-shadow:
+0 10px 25px rgba(102,117,90,0.25);
 }
 
-.btn-primary:hover{transform:translateY(-2px);}
+.btn-primary:hover{
+transform:translateY(-2px);
+}
+
+/* FOOTER */
 
 footer{
 margin-top:90px;
+
 background:var(--dark);
+
 color:white;
+
 text-align:center;
+
 padding:28px;
+
 font-size:14px;
 }
 
-@media(max-width:900px){
-header{flex-direction:column;gap:16px;}
-nav{flex-wrap:wrap;justify-content:center;gap:16px;}
+/* MOBILE */
 
-.hero h1{font-size:42px;}
+@media(max-width:900px){
+
+header{
+flex-direction:column;
+gap:16px;
+}
+
+nav{
+flex-wrap:wrap;
+justify-content:center;
+gap:16px;
+}
+
+.hero h1{
+font-size:42px;
+}
 
 .reviews,
 .stats{
 grid-template-columns:1fr;
 }
 
-.quote h2{font-size:30px;}
+.quote h2{
+font-size:30px;
+}
 
 .cta{
 padding:40px 30px;
 }
 
-.cta h2{font-size:34px;}
+.cta h2{
+font-size:34px;
 }
+
+}
+
 </style>
 </head>
 
 <body>
 
 <header>
-<a href="index.html" class="logo">Kamila <span>Kopřivová</span></a>
+
+<a href="index.html" class="logo">
+Kamila <span>Kopřivová</span>
+</a>
 
 <nav>
 <a href="index.html">Domů</a>
@@ -265,53 +463,89 @@ padding:40px 30px;
 <a href="reference.html">Reference</a>
 <a href="index.html#kontakt">Kontakt</a>
 </nav>
+
 </header>
 
 <div class="hero">
-<div class="hero-label">Reference klientů</div>
 
-<h1>Důvěra klientů je pro mě největší potvrzení dobře odvedené práce.</h1>
+<div class="hero-label">
+Reference klientů
+</div>
+
+<h1>
+Důvěra klientů je pro mě největší potvrzení dobře odvedené práce.
+</h1>
 
 <p>
 Každá spolupráce stojí na komunikaci, profesionálním přístupu
 a kvalitní prezentaci nemovitosti. Největší radost mi dělají spokojení klienti,
 kteří se vracejí nebo mě doporučují dál.
 </p>
+
 </div>
 
 <section>
+
 <div class="reviews">
 
 <div class="review">
-<h3>Prodej rodinného domu</h3>
-<small>Olomouc</small>
+
+<h3>
+Prodej rodinného domu
+</h3>
+
+<small>
+Olomouc
+</small>
+
 <p>
-„Profesionální přístup od začátku do konce. Nemovitost byla perfektně připravená,
+„Profesionální přístup od začátku do konce.
+Nemovitost byla perfektně připravená,
 krásně prezentovaná a celý proces proběhl bez jediného problému.“
 </p>
+
 </div>
 
 <div class="review">
-<h3>Pronájem bytu</h3>
-<small>Šternberk</small>
+
+<h3>
+Pronájem bytu
+</h3>
+
+<small>
+Šternberk
+</small>
+
 <p>
-„Velmi příjemná komunikace, rychlé jednání a profesionální prezentace.
+„Velmi příjemná komunikace, rychlé jednání
+a profesionální prezentace.
 Celý pronájem proběhl hladce a bez stresu.“
 </p>
+
 </div>
 
 <div class="review">
-<h3>Prodej pozemku</h3>
-<small>Bohuňovice</small>
+
+<h3>
+Prodej pozemku
+</h3>
+
+<small>
+Bohuňovice
+</small>
+
 <p>
-„Oceňujeme lidský přístup, pravidelné informace a velkou ochotu.
+„Oceňujeme lidský přístup,
+pravidelné informace a velkou ochotu.
 Spolupráci můžeme jedině doporučit.“
 </p>
+
 </div>
 
 </div>
 
 <div class="stats">
+
 <div class="stat">
 <h2>12+</h2>
 <p>let zkušeností</p>
@@ -326,24 +560,33 @@ Spolupráci můžeme jedině doporučit.“
 <h2>100%</h2>
 <p>důraz na důvěru a kvalitu</p>
 </div>
+
 </div>
 
 <div class="quote">
+
 <h2>
 „Na přípravu nemovitosti kladu velký důraz.
 První dojem je nejdůležitější a lidé nakupují očima.“
 </h2>
+
 </div>
 
 <div class="cta">
-<h2>Uvažujete o prodeji nebo pronájmu?</h2>
+
+<h2>
+Uvažujete o prodeji nebo pronájmu?
+</h2>
 
 <p>
 Ráda vám pomohu připravit profesionální prezentaci
 a bezpečně vás provedu celým procesem.
 </p>
 
-<a href="index.html#kontakt" class="btn btn-primary">Kontaktovat</a>
+<a href="index.html#kontakt" class="btn btn-primary">
+Kontaktovat
+</a>
+
 </div>
 
 </section>
