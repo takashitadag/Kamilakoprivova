@@ -7,15 +7,15 @@
 
 <style>
 :root{
---cream:#f5f1e8;
---cream-dark:#ebe2d3;
---gold:#b79b67;
---olive:#66755a;
---olive-dark:#4f5d45;
---dark:#2a2925;
---text:#4d4a45;
---muted:#746f67;
---border:#e6dccd;
+--white:#ffffff;
+--soft:#f8f6f1;
+--gold:#c6a66a;
+--gold-light:#e8d8b8;
+--navy:#111b3f;
+--navy-soft:#1d2b5c;
+--text:#343434;
+--muted:#777777;
+--border:#eee7da;
 }
 
 *{
@@ -29,10 +29,16 @@ scroll-behavior:smooth;
 }
 
 body{
-background:linear-gradient(180deg,var(--cream),#fffaf2);
+background:var(--white);
 font-family:Arial,sans-serif;
 color:var(--text);
 line-height:1.7;
+overflow-x:hidden;
+}
+
+img{
+max-width:100%;
+display:block;
 }
 
 h1,h2,h3{
@@ -44,24 +50,26 @@ header{
 position:sticky;
 top:0;
 z-index:1000;
-background:linear-gradient(135deg,var(--olive),var(--olive-dark));
+background:rgba(255,255,255,0.96);
+backdrop-filter:blur(14px);
 display:flex;
 justify-content:space-between;
 align-items:center;
 padding:22px 8%;
-box-shadow:0 8px 30px rgba(79,93,69,0.25);
+border-bottom:1px solid var(--border);
 }
 
 .logo{
 font-size:24px;
 font-family:Georgia,serif;
 font-weight:bold;
-color:white;
+color:var(--navy);
 text-decoration:none;
+white-space:nowrap;
 }
 
 .logo span{
-color:#f3e6c9;
+color:var(--gold);
 }
 
 nav{
@@ -72,25 +80,26 @@ align-items:center;
 
 nav a{
 text-decoration:none;
-color:white;
+color:var(--navy);
 font-size:15px;
-transition:0.3s;
+transition:.3s;
 }
 
 nav a:hover{
-color:#f3e6c9;
+color:var(--gold);
 }
 
 .hero{
 text-align:center;
 padding:115px 8% 80px;
+background:linear-gradient(180deg,#ffffff,var(--soft));
 }
 
 .hero-label{
 text-transform:uppercase;
 letter-spacing:2px;
 font-size:13px;
-color:var(--olive);
+color:var(--gold);
 font-weight:bold;
 margin-bottom:18px;
 }
@@ -98,7 +107,7 @@ margin-bottom:18px;
 .hero h1{
 font-size:60px;
 line-height:1.1;
-color:var(--dark);
+color:var(--navy);
 max-width:980px;
 margin:auto;
 margin-bottom:24px;
@@ -112,7 +121,7 @@ color:var(--muted);
 }
 
 section{
-padding:60px 8%;
+padding:70px 8%;
 }
 
 .filters{
@@ -128,7 +137,7 @@ padding:11px 20px;
 border-radius:40px;
 border:1px solid var(--border);
 background:white;
-color:var(--olive-dark);
+color:var(--navy);
 font-weight:bold;
 cursor:pointer;
 transition:.25s;
@@ -136,8 +145,9 @@ transition:.25s;
 
 .filter.active,
 .filter:hover{
-background:linear-gradient(135deg,var(--olive),var(--olive-dark));
+background:var(--navy);
 color:white;
+border-color:var(--navy);
 }
 
 .properties{
@@ -147,17 +157,29 @@ gap:30px;
 }
 
 .property{
-background:linear-gradient(180deg,#ffffff,#faf7f1);
+background:white;
 border:1px solid var(--border);
-border-radius:34px;
+border-radius:30px;
 overflow:hidden;
-box-shadow:0 18px 45px rgba(80,70,50,0.08);
+box-shadow:0 18px 45px rgba(17,27,63,0.06);
 transition:.3s;
+position:relative;
+}
+
+.property::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+right:0;
+height:5px;
+background:linear-gradient(90deg,var(--gold),var(--gold-light));
+z-index:2;
 }
 
 .property:hover{
 transform:translateY(-6px);
-box-shadow:0 24px 60px rgba(80,70,50,0.13);
+box-shadow:0 24px 60px rgba(17,27,63,0.1);
 }
 
 .property img{
@@ -181,26 +203,27 @@ margin-bottom:16px;
 display:inline-block;
 padding:7px 13px;
 border-radius:20px;
-background:linear-gradient(135deg,var(--olive),var(--olive-dark));
+background:var(--navy);
 color:white;
 font-size:12px;
 font-weight:bold;
 }
 
 .tag.light{
-background:#efe5d2;
-color:var(--olive-dark);
+background:var(--soft);
+color:var(--gold);
+border:1px solid var(--border);
 }
 
 .property h3{
 font-size:25px;
-color:var(--dark);
+color:var(--navy);
 margin-bottom:12px;
 line-height:1.25;
 }
 
 .location{
-color:var(--olive-dark);
+color:var(--gold);
 font-weight:bold;
 margin-bottom:10px;
 }
@@ -213,7 +236,7 @@ font-size:15px;
 
 .price{
 font-size:21px;
-color:var(--gold);
+color:var(--navy);
 font-weight:bold;
 margin-bottom:22px;
 }
@@ -228,35 +251,36 @@ transition:.3s;
 }
 
 .btn-primary{
-background:linear-gradient(135deg,var(--olive),var(--olive-dark));
+background:var(--navy);
 color:white;
-box-shadow:0 10px 25px rgba(102,117,90,.25);
+box-shadow:0 10px 25px rgba(17,27,63,.2);
 }
 
-.btn:hover{
+.btn-primary:hover{
+background:var(--navy-soft);
 transform:translateY(-2px);
 }
 
 .notice{
 max-width:1000px;
 margin:0 auto 45px;
-background:linear-gradient(180deg,#ffffff,#f7f2ea);
+background:white;
 border:1px solid var(--border);
 border-radius:28px;
 padding:28px;
-box-shadow:0 14px 40px rgba(80,70,50,.06);
+box-shadow:0 14px 40px rgba(17,27,63,.05);
 color:var(--muted);
 text-align:center;
 }
 
 .sold{
-background:linear-gradient(135deg,#ffffff,var(--cream-dark));
+background:var(--soft);
 }
 
 .section-title{
 font-size:46px;
 text-align:center;
-color:var(--dark);
+color:var(--navy);
 margin-bottom:18px;
 }
 
@@ -272,21 +296,22 @@ font-size:18px;
 .cta{
 text-align:center;
 padding:90px 8%;
+background:white;
 }
 
 .cta-box{
 max-width:780px;
 margin:auto;
-background:linear-gradient(180deg,#ffffff,#f7f2ea);
+background:white;
 padding:58px;
-border-radius:36px;
+border-radius:34px;
 border:1px solid var(--border);
-box-shadow:0 18px 45px rgba(80,70,50,0.08);
+box-shadow:0 22px 65px rgba(17,27,63,0.08);
 }
 
 .cta h2{
 font-size:42px;
-color:var(--dark);
+color:var(--navy);
 margin-bottom:18px;
 }
 
@@ -296,39 +321,134 @@ margin-bottom:30px;
 }
 
 footer{
-background:var(--dark);
+background:var(--navy);
 color:white;
 text-align:center;
 padding:28px;
 font-size:14px;
 }
 
-@media(max-width:900px){
+@media(max-width:1200px){
+.properties{
+grid-template-columns:repeat(2,1fr);
+}
+}
+
+@media(max-width:768px){
 header{
+position:relative;
 flex-direction:column;
-gap:16px;
+gap:18px;
+padding:20px 5%;
+}
+
+.logo{
+font-size:22px;
+text-align:center;
 }
 
 nav{
+width:100%;
+display:flex;
 flex-wrap:wrap;
 justify-content:center;
-gap:16px;
+gap:10px;
+}
+
+nav a{
+font-size:14px;
+padding:8px 12px;
+border-radius:20px;
+background:var(--soft);
+}
+
+.hero{
+padding:70px 6% 55px;
 }
 
 .hero h1{
-font-size:42px;
+font-size:38px;
+line-height:1.15;
+}
+
+.hero p{
+font-size:16px;
+}
+
+section{
+padding:60px 6%;
 }
 
 .properties{
 grid-template-columns:1fr;
 }
 
-.section-title{
-font-size:36px;
-}
-
 .property img{
 height:230px;
+}
+
+.property-content,
+.notice,
+.cta-box{
+padding:28px;
+}
+
+.section-title{
+font-size:34px;
+}
+
+.section-subtitle{
+font-size:16px;
+margin-bottom:35px;
+}
+
+.cta h2{
+font-size:32px;
+}
+
+.btn{
+width:100%;
+text-align:center;
+}
+
+.filters{
+gap:8px;
+}
+
+.filter{
+font-size:13px;
+padding:9px 14px;
+}
+}
+
+@media(max-width:480px){
+.hero h1{
+font-size:32px;
+}
+
+.hero-label{
+font-size:11px;
+}
+
+.logo{
+font-size:20px;
+}
+
+nav a{
+font-size:13px;
+}
+
+.property h3{
+font-size:22px;
+}
+
+.price{
+font-size:19px;
+}
+
+footer{
+font-size:13px;
+padding:24px 6%;
 }
 }
 </style>
@@ -355,15 +475,15 @@ height:230px;
 
 <p>
 Aktuální byty, rodinný dům, komerční prostory a pozemky z nabídky paní Kopřivové.
-Přehled je upravený do elegantního stylu webu s funkčním filtrováním podle typu nabídky.
+Čistá prezentace, přehledné informace a elegantní zpracování.
 </p>
 </div>
 
 <section>
 
 <div class="notice">
-Nabídky jsou sestavené podle viditelných položek ze stránky Reality Proradost a z dodaných screenshotů.
-Fotografie jsou zatím ilustrační, protože přímé stahování originálních fotografií z webu Reality Proradost není vhodné bez souhlasu / stažení z podkladů klientky.
+Nabídky jsou sestavené podle viditelných položek ze stránky Reality Proradost a z dodaných podkladů.
+Fotografie jsou vložené ze složky <strong>images</strong>.
 </div>
 
 <div class="filters">
@@ -387,9 +507,7 @@ Fotografie jsou zatím ilustrační, protože přímé stahování originálníc
 </div>
 <h3>Pronájem útulného bytu 2+kk</h3>
 <p class="location">Olomouc, ul. Kpt. Nálepky</p>
-<p class="desc">
-Přízemní nezařízený byt v Olomouci. Vhodný pro jednotlivce nebo pár, kteří hledají útulné bydlení v dobře dostupné lokalitě.
-</p>
+<p class="desc">Přízemní nezařízený byt v Olomouci. Vhodný pro jednotlivce nebo pár.</p>
 <p class="price">14 000 Kč / měsíc</p>
 <a href="https://www.reality-proradost.cz/reality/vse/?uzivatel=73" class="btn btn-primary">Zobrazit detail</a>
 </div>
@@ -404,9 +522,7 @@ Přízemní nezařízený byt v Olomouci. Vhodný pro jednotlivce nebo pár, kte
 </div>
 <h3>Pronájem stylového bytu 3+1, 76 m²</h3>
 <p class="location">Šternberk – Dolní Žleb</p>
-<p class="desc">
-Stylový byt s lodžií, garáží a zahrádkou. Nabídka působí vhodně pro klienty, kteří hledají příjemné bydlení s praktickým zázemím.
-</p>
+<p class="desc">Stylový byt s lodžií, garáží a zahrádkou v příjemné lokalitě.</p>
 <p class="price">17 200 Kč / měsíc</p>
 <a href="https://www.reality-proradost.cz/reality/vse/?uzivatel=73" class="btn btn-primary">Zobrazit detail</a>
 </div>
@@ -421,9 +537,7 @@ Stylový byt s lodžií, garáží a zahrádkou. Nabídka působí vhodně pro k
 </div>
 <h3>Pronájem exkluzivních komerčních prostor, 204,5 m²</h3>
 <p class="location">Olomouc, centrum</p>
-<p class="desc">
-Reprezentativní komerční prostory v 1. NP v centru Olomouce. Vhodné pro kanceláře, služby nebo firemní zázemí.
-</p>
+<p class="desc">Reprezentativní komerční prostory v 1. NP v centru Olomouce.</p>
 <p class="price">150 000 Kč / měsíc</p>
 <a href="https://www.reality-proradost.cz/reality/pronajem-exkluzivnich-komercnich-prostor-204-5-m2-1-np-centrum-olomouce-29442/" class="btn btn-primary">Zobrazit detail</a>
 </div>
@@ -438,9 +552,7 @@ Reprezentativní komerční prostory v 1. NP v centru Olomouce. Vhodné pro kanc
 </div>
 <h3>Pronájem RD 4+kk, 183 m²</h3>
 <p class="location">Moravičany, okr. Šumperk</p>
-<p class="desc">
-Rodinný dům s pozemkem 507 m² a garáží. Prostorná nabídka pro klienty, kteří hledají komfortní bydlení mimo centrum města.
-</p>
+<p class="desc">Rodinný dům s pozemkem 507 m² a garáží.</p>
 <p class="price">24 000 Kč / měsíc</p>
 <a href="https://www.reality-proradost.cz/reality/pronajem-rd-4-kk-183-m2-pozemek-507-m2-garaz-moravicany-okr-sumperk-29285/" class="btn btn-primary">Zobrazit detail</a>
 </div>
@@ -455,9 +567,7 @@ Rodinný dům s pozemkem 507 m² a garáží. Prostorná nabídka pro klienty, k
 </div>
 <h3>Pronájem bytu 2+1 po rekonstrukci, 53 m²</h3>
 <p class="location">Olomouc, Neředín, ul. Jílová</p>
-<p class="desc">
-Byt po rekonstrukci v 7. patře. Praktická dispozice 2+1 a dobrá dostupnost v oblíbené části Olomouce.
-</p>
+<p class="desc">Byt po rekonstrukci v 7. patře v oblíbené části Olomouce.</p>
 <p class="price">16 000 Kč / měsíc</p>
 <a href="https://www.reality-proradost.cz/reality/vse/?uzivatel=73" class="btn btn-primary">Zobrazit detail</a>
 </div>
@@ -472,9 +582,7 @@ Byt po rekonstrukci v 7. patře. Praktická dispozice 2+1 a dobrá dostupnost v 
 </div>
 <h3>Pronájem bytu 2+kk, 76 m²</h3>
 <p class="location">Olomouc, Ostružnická ul., centrum</p>
-<p class="desc">
-Prostorný byt ve 2. patře v centru Olomouce. Nabídka vhodná pro bydlení nebo reprezentativní městské zázemí.
-</p>
+<p class="desc">Prostorný byt ve 2. patře v centru Olomouce.</p>
 <p class="price">17 000 Kč / měsíc</p>
 <a href="https://www.reality-proradost.cz/reality/pronajem-prostorneho-bytu-v-centru-mesta-76-m2-2-patro-olomouc-ostruznicka-ul-28771/" class="btn btn-primary">Zobrazit detail</a>
 </div>
@@ -489,9 +597,7 @@ Prostorný byt ve 2. patře v centru Olomouce. Nabídka vhodná pro bydlení neb
 </div>
 <h3>Pronájem zařízených kancelářských prostor, 200 m²</h3>
 <p class="location">Olomouc, Holická ul.</p>
-<p class="desc">
-Zařízené kancelářské prostory v 1. patře. Vhodné pro firmu, služby, administrativu nebo zázemí podnikání.
-</p>
+<p class="desc">Zařízené kancelářské prostory v 1. patře.</p>
 <p class="price">45 000 Kč / měsíc</p>
 <a href="https://www.reality-proradost.cz/reality/vse/?uzivatel=73" class="btn btn-primary">Zobrazit detail</a>
 </div>
@@ -506,9 +612,7 @@ Zařízené kancelářské prostory v 1. patře. Vhodné pro firmu, služby, adm
 </div>
 <h3>Místo pro chalupu v srdci Vernířovic</h3>
 <p class="location">Vernířovice, okr. Šumperk</p>
-<p class="desc">
-Pozemek o velikosti 799 m² v centru obce Vernířovice. Nabídka vhodná pro chalupu, rekreaci nebo klidné zázemí v Jeseníkách.
-</p>
+<p class="desc">Pozemek o velikosti 799 m² v centru obce Vernířovice.</p>
 <p class="price">2 200 000 Kč</p>
 <a href="https://www.reality-proradost.cz/reality/tisk/misto-pro-chalupu-v-srdci-vernirovic-pozemek-799-m2-okr-sumperk-27748/" class="btn btn-primary">Zobrazit detail</a>
 </div>
@@ -523,10 +627,7 @@ Pozemek o velikosti 799 m² v centru obce Vernířovice. Nabídka vhodná pro ch
 </div>
 <h3>Prodej pozemku pro bydlení, 3 462 m²</h3>
 <p class="location">Podolí u Bouzova, okr. Olomouc</p>
-<p class="desc">
-Rovinatý pozemek na okraji obce, v územním plánu téměř celý zahrnutý pro rodinné bydlení.
-Lze jej využít pro stavbu, rekreaci, zahradničení nebo jako investici.
-</p>
+<p class="desc">Rovinatý pozemek na okraji obce vhodný pro bydlení, rekreaci nebo investici.</p>
 <p class="price">580 Kč / m²</p>
 <a href="https://www.reality-proradost.cz/reality/prodej-pozemku-pro-bydleni-3-462-m2-okraj-obce-podoli-u-bouzova-okr-olomouc-19796/" class="btn btn-primary">Zobrazit detail</a>
 </div>
@@ -539,8 +640,7 @@ Lze jej využít pro stavbu, rekreaci, zahradničení nebo jako investici.
 <h2 class="section-title">Realizované obchody</h2>
 
 <p class="section-subtitle">
-Tuto část doporučuji doplnit až podle konkrétních podkladů od paní Kopřivové nebo po ručním exportu z Reality Proradost.
-Veřejně dohledatelné realizované nabídky se mohou míchat se staršími nebo archivními stránkami.
+Tuto část doporučuji doplnit podle konkrétních podkladů od paní Kopřivové.
 </p>
 
 <div class="properties">
@@ -553,9 +653,7 @@ Veřejně dohledatelné realizované nabídky se mohou míchat se staršími neb
 </div>
 <h3>Prodej pozemku, 3 075 m²</h3>
 <p class="location">Vernířovice, okr. Šumperk</p>
-<p class="desc">
-Starší dohledaná realizovaná nabídka pozemku k bydlení v obci Vernířovice.
-</p>
+<p class="desc">Starší dohledaná realizovaná nabídka pozemku k bydlení.</p>
 <p class="price">Realizováno</p>
 <a href="https://www.reality-proradost.cz/reality/prodej-pozemku-3-075-m2-k-bydleni-obec-vernirovice-okr-sumperk-21624/" class="btn btn-primary">Zobrazit archiv</a>
 </div>
@@ -569,9 +667,7 @@ Starší dohledaná realizovaná nabídka pozemku k bydlení v obci Vernířovic
 </div>
 <h3>Pronájem bytu</h3>
 <p class="location">Olomouc a okolí</p>
-<p class="desc">
-Ukázková karta pro již realizovaný pronájem. Po dodání přesných podkladů lze doplnit skutečný název, cenu i fotografii.
-</p>
+<p class="desc">Ukázková karta pro již realizovaný pronájem.</p>
 <p class="price">Pronajato</p>
 </div>
 </div>
@@ -584,9 +680,7 @@ Ukázková karta pro již realizovaný pronájem. Po dodání přesných podklad
 </div>
 <h3>Prodej pozemku</h3>
 <p class="location">Olomoucký kraj</p>
-<p class="desc">
-Ukázková karta pro realizovaný prodej pozemku. Přesné realizace je nejlepší doplnit z interních nebo klientkou zaslaných materiálů.
-</p>
+<p class="desc">Ukázková karta pro realizovaný prodej pozemku.</p>
 <p class="price">Prodáno</p>
 </div>
 </div>
