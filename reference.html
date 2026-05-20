@@ -6,26 +6,26 @@
 <title>Reference | Kamila Kopřivová</title>
 
 <style>
-
 :root{
---cream:#f8f5ef;
+--cream:#f5f1e8;
+--cream-dark:#ebe2d3;
 --white:#ffffff;
---gold:#b89b68;
---olive:#6f7b63;
---dark:#2c2a27;
---text:#4d4943;
---muted:#7d766d;
---border:#ece4d7;
+--gold:#b79b67;
+--gold-light:#ceb58a;
+--olive:#66755a;
+--olive-dark:#4f5d45;
+--olive-light:#8b9a7f;
+--sand:#ddd0bc;
+--dark:#2a2925;
+--text:#4d4a45;
+--muted:#746f67;
+--border:#e6dccd;
 }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box;}
 
 body{
-background:var(--cream);
+background:linear-gradient(180deg,var(--cream),#fffaf2);
 font-family:Arial,sans-serif;
 color:var(--text);
 line-height:1.7;
@@ -40,16 +40,12 @@ header{
 position:sticky;
 top:0;
 z-index:1000;
-
-background:rgba(255,255,255,0.95);
-backdrop-filter:blur(12px);
-
+background:rgba(245,241,232,0.94);
+backdrop-filter:blur(14px);
 display:flex;
 justify-content:space-between;
 align-items:center;
-
 padding:22px 8%;
-
 border-bottom:1px solid var(--border);
 }
 
@@ -61,9 +57,7 @@ color:var(--dark);
 text-decoration:none;
 }
 
-.logo span{
-color:var(--gold);
-}
+.logo span{color:var(--gold);}
 
 nav{
 display:flex;
@@ -78,21 +72,25 @@ font-size:15px;
 transition:0.3s;
 }
 
-nav a:hover{
-color:var(--gold);
-}
+nav a:hover{color:var(--olive);}
 
 .hero{
 text-align:center;
-padding:110px 8% 90px;
+padding:115px 8% 95px;
+background:
+linear-gradient(rgba(245,241,232,0.88),rgba(245,241,232,0.96)),
+url("https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1400&q=80");
+background-size:cover;
+background-position:center;
 }
 
 .hero-label{
 text-transform:uppercase;
 letter-spacing:2px;
 font-size:13px;
-color:var(--gold);
+color:var(--olive);
 margin-bottom:18px;
+font-weight:bold;
 }
 
 .hero h1{
@@ -111,9 +109,7 @@ font-size:18px;
 color:var(--muted);
 }
 
-section{
-padding:0 8% 90px;
-}
+section{padding:90px 8%;}
 
 .reviews{
 display:grid;
@@ -122,17 +118,17 @@ gap:28px;
 }
 
 .review{
-background:white;
+background:linear-gradient(180deg,#ffffff,#faf7f1);
 padding:38px;
-border-radius:30px;
+border-radius:32px;
 border:1px solid var(--border);
-box-shadow:0 18px 45px rgba(0,0,0,0.04);
+box-shadow:0 18px 45px rgba(80,70,50,0.07);
 }
 
 .review h3{
 font-size:25px;
 margin-bottom:10px;
-color:var(--dark);
+color:var(--olive-dark);
 }
 
 .review small{
@@ -140,48 +136,43 @@ display:block;
 margin-bottom:20px;
 color:var(--gold);
 font-size:14px;
+font-weight:bold;
 }
 
-.review p{
-color:var(--muted);
-}
+.review p{color:var(--muted);}
 
 .stats{
 margin-top:70px;
-
 display:grid;
 grid-template-columns:repeat(3,1fr);
 gap:24px;
 }
 
 .stat{
-background:white;
+background:linear-gradient(180deg,#ffffff,#f7f2ea);
 padding:42px;
-border-radius:30px;
+border-radius:32px;
 text-align:center;
-box-shadow:0 18px 45px rgba(0,0,0,0.04);
+border:1px solid var(--border);
+box-shadow:0 18px 45px rgba(80,70,50,0.07);
 }
 
 .stat h2{
 font-size:50px;
-color:var(--gold);
+color:var(--olive);
 margin-bottom:10px;
 }
 
-.stat p{
-color:var(--muted);
-}
+.stat p{color:var(--muted);}
 
 .quote{
 margin-top:80px;
-
-background:var(--olive);
+background:linear-gradient(135deg,var(--olive),var(--olive-dark));
 color:white;
-
 padding:90px 8%;
-border-radius:40px;
-
+border-radius:42px;
 text-align:center;
+box-shadow:0 20px 55px rgba(80,70,50,0.14);
 }
 
 .quote h2{
@@ -193,19 +184,18 @@ margin:auto;
 
 .cta{
 margin-top:80px;
-
-background:white;
+background:linear-gradient(180deg,#ffffff,#f7f2ea);
 padding:60px;
-border-radius:34px;
-
+border-radius:36px;
 text-align:center;
-
-box-shadow:0 18px 45px rgba(0,0,0,0.05);
+border:1px solid var(--border);
+box-shadow:0 18px 45px rgba(80,70,50,0.07);
 }
 
 .cta h2{
 font-size:42px;
 margin-bottom:18px;
+color:var(--dark);
 }
 
 .cta p{
@@ -225,13 +215,12 @@ transition:0.3s;
 }
 
 .btn-primary{
-background:var(--olive);
+background:linear-gradient(135deg,var(--olive),var(--olive-dark));
 color:white;
+box-shadow:0 10px 25px rgba(102,117,90,0.25);
 }
 
-.btn-primary:hover{
-transform:translateY(-2px);
-}
+.btn-primary:hover{transform:translateY(-2px);}
 
 footer{
 margin-top:90px;
@@ -243,50 +232,31 @@ font-size:14px;
 }
 
 @media(max-width:900px){
+header{flex-direction:column;gap:16px;}
+nav{flex-wrap:wrap;justify-content:center;gap:16px;}
 
-header{
-flex-direction:column;
-gap:16px;
-}
-
-nav{
-flex-wrap:wrap;
-justify-content:center;
-}
-
-.hero h1{
-font-size:42px;
-}
+.hero h1{font-size:42px;}
 
 .reviews,
 .stats{
 grid-template-columns:1fr;
 }
 
-.quote h2{
-font-size:30px;
-}
+.quote h2{font-size:30px;}
 
 .cta{
 padding:40px 30px;
 }
 
-.cta h2{
-font-size:34px;
+.cta h2{font-size:34px;}
 }
-
-}
-
 </style>
 </head>
 
 <body>
 
 <header>
-
-<a href="index.html" class="logo">
-Kamila <span>Kopřivová</span>
-</a>
+<a href="index.html" class="logo">Kamila <span>Kopřivová</span></a>
 
 <nav>
 <a href="index.html">Domů</a>
@@ -295,86 +265,53 @@ Kamila <span>Kopřivová</span>
 <a href="reference.html">Reference</a>
 <a href="index.html#kontakt">Kontakt</a>
 </nav>
-
 </header>
 
 <div class="hero">
+<div class="hero-label">Reference klientů</div>
 
-<div class="hero-label">
-Reference klientů
-</div>
-
-<h1>
-Důvěra klientů je pro mě největší potvrzení dobře odvedené práce.
-</h1>
+<h1>Důvěra klientů je pro mě největší potvrzení dobře odvedené práce.</h1>
 
 <p>
 Každá spolupráce stojí na komunikaci, profesionálním přístupu
 a kvalitní prezentaci nemovitosti. Největší radost mi dělají spokojení klienti,
 kteří se vracejí nebo mě doporučují dál.
 </p>
-
 </div>
 
 <section>
-
 <div class="reviews">
 
 <div class="review">
-
-<h3>
-Prodej rodinného domu
-</h3>
-
-<small>
-Olomouc
-</small>
-
+<h3>Prodej rodinného domu</h3>
+<small>Olomouc</small>
 <p>
 „Profesionální přístup od začátku do konce. Nemovitost byla perfektně připravená,
 krásně prezentovaná a celý proces proběhl bez jediného problému.“
 </p>
-
 </div>
 
 <div class="review">
-
-<h3>
-Pronájem bytu
-</h3>
-
-<small>
-Šternberk
-</small>
-
+<h3>Pronájem bytu</h3>
+<small>Šternberk</small>
 <p>
 „Velmi příjemná komunikace, rychlé jednání a profesionální prezentace.
 Celý pronájem proběhl hladce a bez stresu.“
 </p>
-
 </div>
 
 <div class="review">
-
-<h3>
-Prodej pozemku
-</h3>
-
-<small>
-Bohuňovice
-</small>
-
+<h3>Prodej pozemku</h3>
+<small>Bohuňovice</small>
 <p>
 „Oceňujeme lidský přístup, pravidelné informace a velkou ochotu.
 Spolupráci můžeme jedině doporučit.“
 </p>
-
 </div>
 
 </div>
 
 <div class="stats">
-
 <div class="stat">
 <h2>12+</h2>
 <p>let zkušeností</p>
@@ -389,33 +326,24 @@ Spolupráci můžeme jedině doporučit.“
 <h2>100%</h2>
 <p>důraz na důvěru a kvalitu</p>
 </div>
-
 </div>
 
 <div class="quote">
-
 <h2>
 „Na přípravu nemovitosti kladu velký důraz.
 První dojem je nejdůležitější a lidé nakupují očima.“
 </h2>
-
 </div>
 
 <div class="cta">
-
-<h2>
-Uvažujete o prodeji nebo pronájmu?
-</h2>
+<h2>Uvažujete o prodeji nebo pronájmu?</h2>
 
 <p>
 Ráda vám pomohu připravit profesionální prezentaci
 a bezpečně vás provedu celým procesem.
 </p>
 
-<a href="index.html#kontakt" class="btn btn-primary">
-Kontaktovat
-</a>
-
+<a href="index.html#kontakt" class="btn btn-primary">Kontaktovat</a>
 </div>
 
 </section>
