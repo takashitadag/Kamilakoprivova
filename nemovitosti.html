@@ -8,6 +8,7 @@
 <style>
 :root{
 --cream:#f5f1e8;
+--cream-dark:#ebe2d3;
 --gold:#b79b67;
 --olive:#66755a;
 --olive-dark:#4f5d45;
@@ -17,7 +18,15 @@
 --border:#e6dccd;
 }
 
-*{margin:0;padding:0;box-sizing:border-box;}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
 
 body{
 background:linear-gradient(180deg,var(--cream),#fffaf2);
@@ -51,7 +60,9 @@ color:white;
 text-decoration:none;
 }
 
-.logo span{color:#f3e6c9;}
+.logo span{
+color:#f3e6c9;
+}
 
 nav{
 display:flex;
@@ -63,13 +74,16 @@ nav a{
 text-decoration:none;
 color:white;
 font-size:15px;
+transition:0.3s;
 }
 
-nav a:hover{color:#f3e6c9;}
+nav a:hover{
+color:#f3e6c9;
+}
 
 .hero{
 text-align:center;
-padding:120px 8% 80px;
+padding:115px 8% 80px;
 }
 
 .hero-label{
@@ -85,19 +99,21 @@ margin-bottom:18px;
 font-size:60px;
 line-height:1.1;
 color:var(--dark);
-max-width:950px;
+max-width:980px;
 margin:auto;
 margin-bottom:24px;
 }
 
 .hero p{
-max-width:760px;
+max-width:790px;
 margin:auto;
 font-size:18px;
 color:var(--muted);
 }
 
-section{padding:60px 8%;}
+section{
+padding:60px 8%;
+}
 
 .filters{
 display:flex;
@@ -136,16 +152,29 @@ border:1px solid var(--border);
 border-radius:34px;
 overflow:hidden;
 box-shadow:0 18px 45px rgba(80,70,50,0.08);
+transition:.3s;
+}
+
+.property:hover{
+transform:translateY(-6px);
+box-shadow:0 24px 60px rgba(80,70,50,0.13);
 }
 
 .property img{
 width:100%;
-height:235px;
+height:245px;
 object-fit:cover;
 }
 
 .property-content{
 padding:30px;
+}
+
+.tags{
+display:flex;
+gap:8px;
+flex-wrap:wrap;
+margin-bottom:16px;
 }
 
 .tag{
@@ -156,7 +185,11 @@ background:linear-gradient(135deg,var(--olive),var(--olive-dark));
 color:white;
 font-size:12px;
 font-weight:bold;
-margin-bottom:16px;
+}
+
+.tag.light{
+background:#efe5d2;
+color:var(--olive-dark);
 }
 
 .property h3{
@@ -200,10 +233,24 @@ color:white;
 box-shadow:0 10px 25px rgba(102,117,90,.25);
 }
 
-.btn:hover{transform:translateY(-2px);}
+.btn:hover{
+transform:translateY(-2px);
+}
+
+.notice{
+max-width:1000px;
+margin:0 auto 45px;
+background:linear-gradient(180deg,#ffffff,#f7f2ea);
+border:1px solid var(--border);
+border-radius:28px;
+padding:28px;
+box-shadow:0 14px 40px rgba(80,70,50,.06);
+color:var(--muted);
+text-align:center;
+}
 
 .sold{
-background:linear-gradient(135deg,#ffffff,#ebe2d3);
+background:linear-gradient(135deg,#ffffff,var(--cream-dark));
 }
 
 .section-title{
@@ -257,11 +304,32 @@ font-size:14px;
 }
 
 @media(max-width:900px){
-header{flex-direction:column;gap:16px;}
-nav{flex-wrap:wrap;justify-content:center;gap:16px;}
-.hero h1{font-size:42px;}
-.properties{grid-template-columns:1fr;}
-.section-title{font-size:36px;}
+header{
+flex-direction:column;
+gap:16px;
+}
+
+nav{
+flex-wrap:wrap;
+justify-content:center;
+gap:16px;
+}
+
+.hero h1{
+font-size:42px;
+}
+
+.properties{
+grid-template-columns:1fr;
+}
+
+.section-title{
+font-size:36px;
+}
+
+.property img{
+height:230px;
+}
 }
 </style>
 </head>
@@ -281,15 +349,22 @@ nav{flex-wrap:wrap;justify-content:center;gap:16px;}
 </header>
 
 <div class="hero">
-<div class="hero-label">Aktuální nabídka</div>
+<div class="hero-label">Aktuální nabídka nemovitostí</div>
+
 <h1>Nemovitosti v nabídce Ing. Kamily Kopřivové</h1>
+
 <p>
-Aktuální byty, domy, pozemky a komerční prostory v elegantní prezentaci.
-Filtry níže umožní rychle zobrazit konkrétní typ nabídky.
+Aktuální byty, rodinný dům, komerční prostory a pozemky z nabídky paní Kopřivové.
+Přehled je upravený do elegantního stylu webu s funkčním filtrováním podle typu nabídky.
 </p>
 </div>
 
 <section>
+
+<div class="notice">
+Nabídky jsou sestavené podle viditelných položek ze stránky Reality Proradost a z dodaných screenshotů.
+Fotografie jsou zatím ilustrační, protože přímé stahování originálních fotografií z webu Reality Proradost není vhodné bez souhlasu / stažení z podkladů klientky.
+</div>
 
 <div class="filters">
 <button class="filter active" data-filter="all">Vše</button>
@@ -302,204 +377,158 @@ Filtry níže umožní rychle zobrazit konkrétní typ nabídky.
 </div>
 
 <div class="properties">
-<div class="properties">
 
 <div class="property" data-category="byt pronajem">
-<img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80">
+<img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80" alt="Pronájem bytu Olomouc Kpt. Nálepky">
 <div class="property-content">
-<span class="tag">Pronájem bytu</span>
+<div class="tags">
+<span class="tag">Byty</span>
+<span class="tag light">Pronájem</span>
+</div>
 <h3>Pronájem útulného bytu 2+kk</h3>
 <p class="location">Olomouc, ul. Kpt. Nálepky</p>
-<p class="desc">Přízemní nezařízený byt vhodný pro klidné bydlení v Olomouci.</p>
+<p class="desc">
+Přízemní nezařízený byt v Olomouci. Vhodný pro jednotlivce nebo pár, kteří hledají útulné bydlení v dobře dostupné lokalitě.
+</p>
 <p class="price">14 000 Kč / měsíc</p>
-</div>
-</div>
-
-<div class="property" data-category="byt pronajem">
-<img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1200&q=80">
-<div class="property-content">
-<span class="tag">Pronájem bytu</span>
-<h3>Pronájem stylového bytu 3+1, 76 m²</h3>
-<p class="location">Šternberk – Dolní Žleb</p>
-<p class="desc">Byt s lodžií, garáží a zahrádkou v příjemné lokalitě.</p>
-<p class="price">17 200 Kč / měsíc</p>
-</div>
-</div>
-
-<div class="property" data-category="komerce pronajem">
-<img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80">
-<div class="property-content">
-<span class="tag">Pronájem komerce</span>
-<h3>Pronájem exkluzivních komerčních prostor, 204,5 m²</h3>
-<p class="location">Olomouc, centrum</p>
-<p class="desc">Reprezentativní prostory v 1. NP v centru Olomouce.</p>
-<p class="price">150 000 Kč / měsíc</p>
-</div>
-</div>
-
-<div class="property" data-category="dum pronajem">
-<img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80">
-<div class="property-content">
-<span class="tag">Pronájem domu</span>
-<h3>Pronájem RD 4+kk, 183 m²</h3>
-<p class="location">Moravičany, okr. Šumperk</p>
-<p class="desc">Rodinný dům s pozemkem 507 m², garáží a moderním zázemím.</p>
-<p class="price">24 000 Kč / měsíc</p>
-</div>
-</div>
-
-<div class="property" data-category="byt pronajem">
-<img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1200&q=80">
-<div class="property-content">
-<span class="tag">Pronájem bytu</span>
-<h3>Pronájem bytu 2+1 po rekonstrukci, 53 m²</h3>
-<p class="location">Olomouc, Neředín, ul. Jílová</p>
-<p class="desc">Byt po rekonstrukci v 7. patře s praktickou dispozicí.</p>
-<p class="price">16 000 Kč / měsíc</p>
-</div>
-</div>
-
-<div class="property" data-category="byt pronajem">
-<img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80">
-<div class="property-content">
-<span class="tag">Pronájem bytu</span>
-<h3>Pronájem bytu 2+kk, 76 m²</h3>
-<p class="location">Olomouc, Ostružnická ul., centrum</p>
-<p class="desc">Prostorný byt ve 2. patře v centru Olomouce.</p>
-<p class="price">17 000 Kč / měsíc</p>
-</div>
-</div>
-
-<div class="property" data-category="komerce pronajem">
-<img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1200&q=80">
-<div class="property-content">
-<span class="tag">Pronájem kanceláří</span>
-<h3>Pronájem zařízených kancelářských prostor, 200 m²</h3>
-<p class="location">Olomouc, Holická ul.</p>
-<p class="desc">Zařízené kancelářské prostory v 1. patře vhodné pro firmu nebo služby.</p>
-<p class="price">45 000 Kč / měsíc</p>
-</div>
-</div>
-
-<div class="property" data-category="pozemek prodej">
-<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80">
-<div class="property-content">
-<span class="tag">Prodej pozemku</span>
-<h3>Místo pro chalupu v srdci Vernířovic</h3>
-<p class="location">Vernířovice, okr. Šumperk</p>
-<p class="desc">Pozemek 799 m² v krásném prostředí vhodný pro rekreační využití.</p>
-<p class="price">2 200 000 Kč</p>
-</div>
-</div>
-
-<div class="property" data-category="pozemek prodej">
-<img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80">
-<div class="property-content">
-<span class="tag">Prodej pozemku</span>
-<h3>Prodej pozemku pro bydlení, 3 462 m²</h3>
-<p class="location">Podolí u Bouzova, okr. Olomouc</p>
-<p class="desc">Pozemek na okraji obce vhodný pro bydlení v klidném prostředí.</p>
-<p class="price">580 Kč / m²</p>
-</div>
-</div>
-
-</div>
-</div>
-</div>
-
-<div class="property" data-category="byt pronajem">
-<img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1200&q=80">
-<div class="property-content">
-<span class="tag">Pronájem bytu</span>
-<h3>Pronájem zařízeného bytu 3+1</h3>
-<p class="location">Olomouc, 17. listopadu</p>
-<p class="desc">Velmi pěkný cihlový byt s lodžií v centru Olomouce.</p>
-<p class="price">22 000 Kč / měsíc</p>
-<a href="https://www.reality-proradost.cz/reality/pronajem-zarizeneho-bytu-3-1-olomouc-ulice-17-listopadu-28879/" class="btn btn-primary">Zobrazit detail</a>
-</div>
-</div>
-
-<div class="property" data-category="byt pronajem">
-<img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1200&q=80">
-<div class="property-content">
-<span class="tag">Pronájem bytu</span>
-<h3>Pronájem pěkného bytu 1+kk</h3>
-<p class="location">Olomouc, Dolní Hejčínská</p>
-<p class="desc">Menší byt v Olomouci vhodný pro jednotlivce nebo pár.</p>
-<p class="price">10 000 Kč / měsíc</p>
 <a href="https://www.reality-proradost.cz/reality/vse/?uzivatel=73" class="btn btn-primary">Zobrazit detail</a>
 </div>
 </div>
 
-<div class="property" data-category="dum pronajem">
-<img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80">
+<div class="property" data-category="byt pronajem">
+<img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1200&q=80" alt="Pronájem bytu Šternberk Dolní Žleb">
 <div class="property-content">
-<span class="tag">Pronájem domu</span>
-<h3>Pronájem RD 4+kk, 183 m²</h3>
-<p class="location">Moravičany, okr. Šumperk</p>
-<p class="desc">Rodinný dům s pozemkem 507 m² a garáží.</p>
-<p class="price">24 000 Kč / měsíc</p>
-<a href="https://www.reality-proradost.cz/reality/pronajem-rd-4-kk-183-m2-pozemek-507-m2-garaz-moravicany-okr-sumperk-29285/" class="btn btn-primary">Zobrazit detail</a>
+<div class="tags">
+<span class="tag">Byty</span>
+<span class="tag light">Pronájem</span>
 </div>
-</div>
-
-<div class="property" data-category="pozemek prodej">
-<img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80">
-<div class="property-content">
-<span class="tag">Prodej pozemku</span>
-<h3>Prodej pozemku pro bydlení, 3 462 m²</h3>
-<p class="location">Podolí u Bouzova, okr. Olomouc</p>
-<p class="desc">Pozemek na okraji obce, vhodný pro bydlení a klidné zázemí.</p>
-<p class="price">580 Kč / m²</p>
-<a href="https://www.reality-proradost.cz/reality/prodej-pozemku-pro-bydleni-3-462-m2-okraj-obce-podoli-u-bouzova-okr-olomouc-19796/" class="btn btn-primary">Zobrazit detail</a>
-</div>
-</div>
-
-<div class="property" data-category="pozemek prodej">
-<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80">
-<div class="property-content">
-<span class="tag">Prodej pozemku</span>
-<h3>Prodej zahrady, 1 124 m²</h3>
-<p class="location">Litovel</p>
-<p class="desc">Pozemek v klidné zahrádkářské kolonii, vhodný pro odpočinek, pěstování i rekreaci.</p>
-<p class="price">Cena u makléře</p>
-<a href="https://www.sreality.cz/detail/prodej/pozemek/zahrada/litovel-litovel-/2548515660" class="btn btn-primary">Zobrazit detail</a>
-</div>
-</div>
-
-<div class="property" data-category="pozemek prodej">
-<img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80">
-<div class="property-content">
-<span class="tag">Prodej pozemku</span>
-<h3>Prodej stavebního pozemku, 462 m²</h3>
-<p class="location">Újezd u Uničova</p>
-<p class="desc">Stavební pozemek v Olomouckém kraji, vhodný jako základ pro nové bydlení.</p>
-<p class="price">835 000 Kč</p>
-<a href="https://www.reality-proradost.cz/reality/prodej-stavebni-pozemek-462-m2-ujezd-u-unicova-28993/" class="btn btn-primary">Zobrazit detail</a>
+<h3>Pronájem stylového bytu 3+1, 76 m²</h3>
+<p class="location">Šternberk – Dolní Žleb</p>
+<p class="desc">
+Stylový byt s lodžií, garáží a zahrádkou. Nabídka působí vhodně pro klienty, kteří hledají příjemné bydlení s praktickým zázemím.
+</p>
+<p class="price">17 200 Kč / měsíc</p>
+<a href="https://www.reality-proradost.cz/reality/vse/?uzivatel=73" class="btn btn-primary">Zobrazit detail</a>
 </div>
 </div>
 
 <div class="property" data-category="komerce pronajem">
-<img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80">
+<img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80" alt="Komerční prostory Olomouc centrum">
 <div class="property-content">
-<span class="tag">Pronájem komerce</span>
-<h3>Pronájem komerčních prostor, 204,5 m²</h3>
-<p class="location">Olomouc, Dolní náměstí</p>
-<p class="desc">Reprezentativní vybavené prostory v centru města pro kanceláře, služby nebo sídlo firmy.</p>
+<div class="tags">
+<span class="tag">Komerční</span>
+<span class="tag light">Pronájem</span>
+</div>
+<h3>Pronájem exkluzivních komerčních prostor, 204,5 m²</h3>
+<p class="location">Olomouc, centrum</p>
+<p class="desc">
+Reprezentativní komerční prostory v 1. NP v centru Olomouce. Vhodné pro kanceláře, služby nebo firemní zázemí.
+</p>
 <p class="price">150 000 Kč / měsíc</p>
 <a href="https://www.reality-proradost.cz/reality/pronajem-exkluzivnich-komercnich-prostor-204-5-m2-1-np-centrum-olomouce-29442/" class="btn btn-primary">Zobrazit detail</a>
 </div>
 </div>
 
-<div class="property" data-category="komerce pronajem">
-<img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80">
+<div class="property" data-category="dum pronajem">
+<img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" alt="Rodinný dům Moravičany">
 <div class="property-content">
-<span class="tag">Pronájem komerce</span>
-<h3>Pronájem obchodního prostoru, 20 m²</h3>
-<p class="location">Šternberk, ČSA</p>
-<p class="desc">Obchodní prostor v přízemí historického domu s výlohou do ulice.</p>
-<p class="price">5 500 Kč / měsíc</p>
-<a href="https://www.reality-proradost.cz/reality/pronajem-obchodniho-prostoru-20-m2-prizemi-centrum-sternberk-27726/" class="btn btn-primary">Zobrazit detail</a>
+<div class="tags">
+<span class="tag">Rodinné domy</span>
+<span class="tag light">Pronájem</span>
+</div>
+<h3>Pronájem RD 4+kk, 183 m²</h3>
+<p class="location">Moravičany, okr. Šumperk</p>
+<p class="desc">
+Rodinný dům s pozemkem 507 m² a garáží. Prostorná nabídka pro klienty, kteří hledají komfortní bydlení mimo centrum města.
+</p>
+<p class="price">24 000 Kč / měsíc</p>
+<a href="https://www.reality-proradost.cz/reality/pronajem-rd-4-kk-183-m2-pozemek-507-m2-garaz-moravicany-okr-sumperk-29285/" class="btn btn-primary">Zobrazit detail</a>
+</div>
+</div>
+
+<div class="property" data-category="byt pronajem">
+<img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1200&q=80" alt="Pronájem bytu Olomouc Neředín">
+<div class="property-content">
+<div class="tags">
+<span class="tag">Byty</span>
+<span class="tag light">Pronájem</span>
+</div>
+<h3>Pronájem bytu 2+1 po rekonstrukci, 53 m²</h3>
+<p class="location">Olomouc, Neředín, ul. Jílová</p>
+<p class="desc">
+Byt po rekonstrukci v 7. patře. Praktická dispozice 2+1 a dobrá dostupnost v oblíbené části Olomouce.
+</p>
+<p class="price">16 000 Kč / měsíc</p>
+<a href="https://www.reality-proradost.cz/reality/vse/?uzivatel=73" class="btn btn-primary">Zobrazit detail</a>
+</div>
+</div>
+
+<div class="property" data-category="byt pronajem">
+<img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80" alt="Pronájem bytu Olomouc Ostružnická">
+<div class="property-content">
+<div class="tags">
+<span class="tag">Byty</span>
+<span class="tag light">Pronájem</span>
+</div>
+<h3>Pronájem bytu 2+kk, 76 m²</h3>
+<p class="location">Olomouc, Ostružnická ul., centrum</p>
+<p class="desc">
+Prostorný byt ve 2. patře v centru Olomouce. Nabídka vhodná pro bydlení nebo reprezentativní městské zázemí.
+</p>
+<p class="price">17 000 Kč / měsíc</p>
+<a href="https://www.reality-proradost.cz/reality/pronajem-prostorneho-bytu-v-centru-mesta-76-m2-2-patro-olomouc-ostruznicka-ul-28771/" class="btn btn-primary">Zobrazit detail</a>
+</div>
+</div>
+
+<div class="property" data-category="komerce pronajem">
+<img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1200&q=80" alt="Kanceláře Olomouc Holická">
+<div class="property-content">
+<div class="tags">
+<span class="tag">Komerční</span>
+<span class="tag light">Pronájem</span>
+</div>
+<h3>Pronájem zařízených kancelářských prostor, 200 m²</h3>
+<p class="location">Olomouc, Holická ul.</p>
+<p class="desc">
+Zařízené kancelářské prostory v 1. patře. Vhodné pro firmu, služby, administrativu nebo zázemí podnikání.
+</p>
+<p class="price">45 000 Kč / měsíc</p>
+<a href="https://www.reality-proradost.cz/reality/vse/?uzivatel=73" class="btn btn-primary">Zobrazit detail</a>
+</div>
+</div>
+
+<div class="property" data-category="pozemek prodej">
+<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80" alt="Pozemek Vernířovice">
+<div class="property-content">
+<div class="tags">
+<span class="tag">Pozemky</span>
+<span class="tag light">Prodej</span>
+</div>
+<h3>Místo pro chalupu v srdci Vernířovic</h3>
+<p class="location">Vernířovice, okr. Šumperk</p>
+<p class="desc">
+Pozemek o velikosti 799 m² v centru obce Vernířovice. Nabídka vhodná pro chalupu, rekreaci nebo klidné zázemí v Jeseníkách.
+</p>
+<p class="price">2 200 000 Kč</p>
+<a href="https://www.reality-proradost.cz/reality/tisk/misto-pro-chalupu-v-srdci-vernirovic-pozemek-799-m2-okr-sumperk-27748/" class="btn btn-primary">Zobrazit detail</a>
+</div>
+</div>
+
+<div class="property" data-category="pozemek prodej">
+<img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80" alt="Pozemek Podolí u Bouzova">
+<div class="property-content">
+<div class="tags">
+<span class="tag">Pozemky</span>
+<span class="tag light">Prodej</span>
+</div>
+<h3>Prodej pozemku pro bydlení, 3 462 m²</h3>
+<p class="location">Podolí u Bouzova, okr. Olomouc</p>
+<p class="desc">
+Rovinatý pozemek na okraji obce, v územním plánu téměř celý zahrnutý pro rodinné bydlení.
+Lze jej využít pro stavbu, rekreaci, zahradničení nebo jako investici.
+</p>
+<p class="price">580 Kč / m²</p>
+<a href="https://www.reality-proradost.cz/reality/prodej-pozemku-pro-bydleni-3-462-m2-okraj-obce-podoli-u-bouzova-okr-olomouc-19796/" class="btn btn-primary">Zobrazit detail</a>
 </div>
 </div>
 
@@ -508,42 +537,57 @@ Filtry níže umožní rychle zobrazit konkrétní typ nabídky.
 
 <section class="sold">
 <h2 class="section-title">Realizované obchody</h2>
+
 <p class="section-subtitle">
-Dohledané realizované nabídky a starší obchody paní Kopřivové. Přesné fotografie doporučuji doplnit přímo z podkladů od makléřky.
+Tuto část doporučuji doplnit až podle konkrétních podkladů od paní Kopřivové nebo po ručním exportu z Reality Proradost.
+Veřejně dohledatelné realizované nabídky se mohou míchat se staršími nebo archivními stránkami.
 </p>
 
 <div class="properties">
 
 <div class="property">
-<img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=80">
+<img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=80" alt="Realizovaný obchod">
 <div class="property-content">
+<div class="tags">
 <span class="tag">Realizováno</span>
-<h3>Prodej RD 3+kk, terasa a zahrada</h3>
-<p class="location">Olomouc-Nemilany</p>
-<p class="desc">Řadový dům o užitné ploše 93 m² na pozemku 152 m².</p>
-<p class="price">7 490 000 Kč</p>
+</div>
+<h3>Prodej pozemku, 3 075 m²</h3>
+<p class="location">Vernířovice, okr. Šumperk</p>
+<p class="desc">
+Starší dohledaná realizovaná nabídka pozemku k bydlení v obci Vernířovice.
+</p>
+<p class="price">Realizováno</p>
+<a href="https://www.reality-proradost.cz/reality/prodej-pozemku-3-075-m2-k-bydleni-obec-vernirovice-okr-sumperk-21624/" class="btn btn-primary">Zobrazit archiv</a>
 </div>
 </div>
 
 <div class="property">
-<img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80">
+<img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80" alt="Realizovaný pronájem bytu">
 <div class="property-content">
+<div class="tags">
 <span class="tag">Realizováno</span>
-<h3>Pronájem bytu 2+1, 49 m²</h3>
-<p class="location">Olomouc, Rooseveltova</p>
-<p class="desc">Starší realizovaný pronájem bytu v Olomouci.</p>
+</div>
+<h3>Pronájem bytu</h3>
+<p class="location">Olomouc a okolí</p>
+<p class="desc">
+Ukázková karta pro již realizovaný pronájem. Po dodání přesných podkladů lze doplnit skutečný název, cenu i fotografii.
+</p>
 <p class="price">Pronajato</p>
 </div>
 </div>
 
 <div class="property">
-<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80">
+<img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80" alt="Realizovaný prodej pozemku">
 <div class="property-content">
+<div class="tags">
 <span class="tag">Realizováno</span>
-<h3>Prodej zahrady, 373 m²</h3>
-<p class="location">Mírov, okr. Šumperk</p>
-<p class="desc">Zahrada v zahrádkářské kolonii za uzamykatelnou bránou.</p>
-<p class="price">349 000 Kč</p>
+</div>
+<h3>Prodej pozemku</h3>
+<p class="location">Olomoucký kraj</p>
+<p class="desc">
+Ukázková karta pro realizovaný prodej pozemku. Přesné realizace je nejlepší doplnit z interních nebo klientkou zaslaných materiálů.
+</p>
+<p class="price">Prodáno</p>
 </div>
 </div>
 
@@ -552,8 +596,12 @@ Dohledané realizované nabídky a starší obchody paní Kopřivové. Přesné 
 
 <section class="cta">
 <div class="cta-box">
-<h2>Chcete se zeptat na nemovitost?</h2>
-<p>Ozvěte se paní Kopřivové a domluvte si prohlídku nebo konzultaci.</p>
+<h2>Máte zájem o některou z nemovitostí?</h2>
+
+<p>
+Ozvěte se paní Kopřivové a domluvte si prohlídku nebo nezávaznou konzultaci.
+</p>
+
 <a href="index.html#kontakt" class="btn btn-primary">Kontaktovat makléřku</a>
 </div>
 </section>
